@@ -11,27 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140118192300) do
+ActiveRecord::Schema.define(:version => 20140118210911) do
 
   create_table "actions", :force => true do |t|
     t.string   "hashtag"
     t.integer  "user_id"
-    t.integer  "tweet_id"
+    t.integer  "tweet_id",        :limit => 8
     t.text     "body"
     t.float    "coefficient"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
     t.string   "screen_name"
-    t.integer  "twitter_user_id"
+    t.integer  "twitter_user_id", :limit => 8
     t.string   "link"
   end
 
   create_table "users", :force => true do |t|
     t.string   "screen_name"
     t.string   "avatar_url"
-    t.integer  "twitter_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "twitter_id",  :limit => 8
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
 end
