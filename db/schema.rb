@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20140118192300) do
   create_table "users", :force => true do |t|
     t.string   "screen_name"
     t.string   "avatar_url"
-    t.integer   "twitter_id"
+    t.integer  "twitter_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
