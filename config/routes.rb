@@ -1,4 +1,7 @@
 Blueap::Application.routes.draw do
+  
+  get "actions" => "actions#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
