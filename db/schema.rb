@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140118181110) do
+ActiveRecord::Schema.define(:version => 20140118183032) do
 
   create_table "actions", :force => true do |t|
     t.string   "hashtag"
@@ -19,9 +19,10 @@ ActiveRecord::Schema.define(:version => 20140118181110) do
     t.integer  "tweet_id"
     t.text     "body"
     t.float    "coefficient"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "screen_name"
+    t.integer  "twitter_user_id"
   end
 
 end
