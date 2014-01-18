@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140118200347) do
+ActiveRecord::Schema.define(:version => 20140118192300) do
 
   create_table "actions", :force => true do |t|
     t.string   "hashtag"
@@ -29,9 +29,9 @@ ActiveRecord::Schema.define(:version => 20140118200347) do
   create_table "users", :force => true do |t|
     t.string   "screen_name"
     t.string   "avatar_url"
-    t.integer  "twitter_id",  :limit => 255
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.string   "twitter_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end
