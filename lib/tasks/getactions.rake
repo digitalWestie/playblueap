@@ -1,17 +1,7 @@
-class Action < ActiveRecord::Base
-  attr_accessible :body, :coefficient, :hashtag, :tweet_id, :twitter_user_id, :user_id, :screen_name, :link
-
-  belongs_to :user
-  
-  def self.is_tweet_valid?(tweet)
-    is_valid = (tweet.attrs[:in_reply_to_user_id].eql?(BLUEAP_USER_ID)) #is in reply to blueap
-    is_valid = (is_valid and !tweet.attrs[:user][:id].eql?(BLUEAP_USER_ID)) #cant be from the app
-    is_valid = (is_valid and !tweet.attrs[:entities][:hashtags].blank?) #must have an action hashtag
-    is_valid
-  end
-
-  def self.get_latest_actions(hashtag="")
-    results = TWITTER.search("to:playblueap #{hashtag}", :result_type => "recent", :count => 10)
+namespace :actions do
+  desc "Scrape recent tweet actions"
+  task :create => :environment do
+    results = TWITTER.search("to:playblueap #{hashtag}", :result_type => "recent")
     results.each do |tweet|
       if Action.is_tweet_valid?(tweet)
         u = User.find_or_create_by_twitter_id(tweet.attrs[:user][:id], 
@@ -30,6 +20,7 @@ class Action < ActiveRecord::Base
           :screen_name => tweet.attrs[:user][:screen_name])        
       end
     end
+    #:since_id (Integer) — Returns results with an ID greater than (that is, more recent than) the specified ID. 
+    #There are limits to the number of Tweets which can be accessed through the API. If the limit of Tweets has occured since the since_id, the since_id will be forced to the oldest ID available.
   end
-
 end

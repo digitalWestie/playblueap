@@ -15,4 +15,3 @@
 /tmp
 
 /config/application.yml
-/lib/tasks/getactions.rake
