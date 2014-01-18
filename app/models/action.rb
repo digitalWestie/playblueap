@@ -1,5 +1,7 @@
 class Action < ActiveRecord::Base
-  attr_accessible :body, :coefficient, :hashtag, :tweet_id, :twitter_user_id, :user_id, :screen_name
+  attr_accessible :body, :coefficient, :hashtag, :tweet_id, :twitter_user_id, :user_id, :screen_name, :link
+
+  belongs_to :user
   
   def self.is_tweet_valid?(tweet)
     is_valid = (tweet.attrs[:in_reply_to_user_id].eql?(BLUEAP_USER_ID)) #is in reply to blueap
@@ -12,16 +14,20 @@ class Action < ActiveRecord::Base
     results = TWITTER.search("to:playblueap #{hashtag}", :result_type => "recent")
     results.each do |tweet|
       if Action.is_tweet_valid?(tweet)
-        
+        u = User.find_or_create_by_twitter_id(tweet.attrs[:user][:id], 
+          :avatar_url => tweet.attrs[:user][:profile_image_url], 
+          :screen_name => tweet.attrs[:user][:screen_name])
+
         link = ""
         link = tweet.attrs[:entities][:urls].first[:expanded_url] unless tweet.attrs[:entities][:urls].blank?
 
         Action.find_or_create_by_tweet_id(tweet.attrs[:id], 
           :body => tweet.text, :coefficient => 1.0, 
+          :user_id => u.id,
           :twitter_user_id => tweet.attrs[:user][:id], 
           :hashtag => tweet.attrs[:entities][:hashtags].first[:text],
           :link => link,
-          :screen_name => tweet.attrs[:user][:screen_name])
+          :screen_name => tweet.attrs[:user][:screen_name])        
       end
     end
   end
