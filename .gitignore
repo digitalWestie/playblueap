@@ -15,4 +15,4 @@
 /tmp
 
 #dont show twitter id
-/config/blueapp.rb
+/config/initializers/blueapp.rb

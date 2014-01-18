@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  hashtag: MyString
+  user_id: 1
+  tweet_id: 1
+  body: MyText
+  coefficient: 1.5
+
+two:
+  hashtag: MyString
+  user_id: 1
+  tweet_id: 1
+  body: MyText
+  coefficient: 1.5
