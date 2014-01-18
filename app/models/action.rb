@@ -1,5 +1,5 @@
 class Action < ActiveRecord::Base
-  attr_accessible :body, :coefficient, :hashtag, :tweet_id, :user_id
+  attr_accessible :body, :coefficient, :hashtag, :tweet_id, :user_id, :screen_name
   BLUEAP_USER_ID = 17069499 # CHANGE TO..
 
   def is_tweet_valid?(tweet)
