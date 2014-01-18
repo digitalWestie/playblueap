@@ -16,3 +16,6 @@
 
 #dont show twitter id
 /config/initializers/blueapp.rb
+
+
+/lib/tasks/getactions.rake
