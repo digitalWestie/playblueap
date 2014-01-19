@@ -6,7 +6,7 @@ class ActionsController < ApplicationController
     end
     @actions = Action.order('tweet_id DESC').limit(60).all
   end
-  
+
   def totals
     @badge_counts = {}
     Action::BADGES.each do |hashtag, name|
@@ -14,5 +14,4 @@ class ActionsController < ApplicationController
       @badge_counts.merge!({name => count})
     end
   end
-
 end

@@ -1,9 +1,9 @@
 <h1>Badges</h1>
 
 <ul class = "badge_tabs">
-  <li><button data-target = ".badge">All</button></li>  
+  <li><button class = "active" data-target = ".badge"><%= image_tag 'all.png' %>All</button></li>  
   <% Action::BADGES.each do |hashtag, name| %>
-    <li><button data-target = ".<%= hashtag %>"><%= name %></button></li>
+    <li><button data-target = ".<%= hashtag %>"><%= image_tag "#{hashtag}.png" %><%= name %></button></li>
   <% end %>
 </ul>
 
@@ -12,10 +12,11 @@
   <li class="<%= action.hashtag %> badge">
     <div class = "profile_circle"><%= image_tag action.user.avatar_url %></div>
     <div class="bubble">
+      <%= link_to(image_tag(action.photo_url, :style => "float:left; height:5em; margin-right:1em;"), action.photo_url, :target => "_blank") unless action.photo_url.blank? %>
       <%= action.user.screen_name %>: 
       <% reply_txt = action.body[0..10].downcase.eql?("@playblueap") %>
       <%= action.body[11..-1] if reply_txt %>
-      <%= link_to "sito", action.link unless action.link.blank? %>
+      <%= link_to("sito", action.link, :target => "_blank") unless action.link.blank? %>
     </div>
   </li>
 <% end %>
