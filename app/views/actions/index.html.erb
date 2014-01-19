@@ -9,7 +9,8 @@
 
 <ul class = "badges">
 <% for action in @actions %>
-  <li class="<%= action.hashtag %> badge">
+  <% standard  = Action::BADGES.keys.include?(action.hashtag) ? "standard" : "nonstandard" %>
+  <li class="<%= action.hashtag %> <%= standard %> badge">
     <div class = "profile_circle"><%= image_tag action.user.avatar_url %></div>
     <div class="bubble">
       <%= link_to(image_tag(action.photo_url, :style => "float:left; height:5em; margin-right:1em;"), action.photo_url, :target => "_blank") unless action.photo_url.blank? %>
@@ -30,6 +31,7 @@
     $('ul.badge_tabs li button').removeClass('active');
     $(this).addClass('active');
     var t = $(this).attr('data-target');
+    if (t == ".blueapcall"){ console.log("call"); $('li.badge.nonstandard').show();  }
     $('li'+t).show();
   });
 <% end %>
