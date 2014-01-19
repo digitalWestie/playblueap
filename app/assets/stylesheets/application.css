@@ -42,7 +42,12 @@ ul { -webkit-margin: 0px; -webkit-padding-start: 0px; -webkit-margin-before: 0em
 -webkit-margin-after: 0em; list-style:none; margin:none; padding:0px; font-family: 'Varela Round', sans-serif; }
 ul.badge_tabs { float:left; width:20%; padding: 0% 1%; }
 ul.badge_tabs li { margin-bottom: 5px; }
-ul.badge_tabs button { text-align: left; height: 3.5em; line-height: 3.5em; background-color: transparent; width:95%; padding:2%; border:none; border-radius: 3px; font-size:1em; text-align: middle;} 
+ul.badge_tabs button { text-align: left; height: 3.5em; background-color: transparent; width:95%; padding:2%; border:none; border-radius: 3px; font-size:1em; text-align: middle;} 
+ul.badge_tabs button span { top: 16px;
+display: block;
+font-size: 0.9em;
+line-height: 0.9em;
+position: relative; }
 ul.badge_tabs button:hover { cursor:pointer; }
 ul.badge_tabs button img { float: left; background-color: white; border-radius: 30px; margin-right:0.4em; }
 ul.badge_tabs button.active img { background-color: #23acdc; }

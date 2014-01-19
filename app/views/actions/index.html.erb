@@ -1,9 +1,9 @@
 <h1>Badges</h1>
 
 <ul class = "badge_tabs">
-  <li><button class = "active" data-target = ".badge"><%= image_tag 'all.png' %>All</button></li>  
+  <li><button class = "active" data-target = ".badge"><%= image_tag 'all.png' %><span>All</span></button></li>  
   <% Action::BADGES.each do |hashtag, name| %>
-    <li><button data-target = ".<%= hashtag %>"><%= image_tag "#{hashtag}.png" %><%= name %></button></li>
+    <li><button data-target = ".<%= hashtag %>"><%= image_tag "#{hashtag}.png" %><span><%= name %></span></button></li>
   <% end %>
 </ul>
 
