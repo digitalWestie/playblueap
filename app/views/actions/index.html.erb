@@ -1,4 +1,34 @@
-<h1>Actions</h1>
+<h1>Badges</h1>
+
+<ul class = "badge_tabs">
+  <li><button data-target = ".badge">All</button></li>  
+  <% Action::BADGES.each do |hashtag, name| %>
+    <li><button data-target = ".<%= hashtag %>"><%= name %></button></li>
+  <% end %>
+</ul>
+
+<ul class = "badges">
 <% for action in @actions %>
-  <p> <%= image_tag action.user.avatar_url %><br/><%= action.user.screen_name %>: <%= action.hashtag %></p>
+  <li class="<%= action.hashtag %> badge">
+    <div class = "profile_circle"><%= image_tag action.user.avatar_url %></div>
+    <div class="bubble">
+      <%= action.user.screen_name %>: 
+      <% reply_txt = action.body[0..10].downcase.eql?("@playblueap") %>
+      <%= action.body[11..-1] if reply_txt %>
+      <%= link_to "sito", action.link unless action.link.blank? %>
+    </div>
+  </li>
+<% end %>
+</ul>
+
+<div class = "clear"></div>
+
+<%= javascript_tag do %>
+  $('ul.badge_tabs li button').click(function(e){ 
+    $('li.badge').hide();
+    $('ul.badge_tabs li button').removeClass('active');
+    $(this).addClass('active');
+    var t = $(this).attr('data-target');
+    $('li'+t).show();
+  });
 <% end %>

@@ -1,6 +1,7 @@
 Blueap::Application.routes.draw do
   
   get "actions" => "actions#index"
+  get "totals" => "actions#totals"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -51,7 +52,7 @@ Blueap::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'actions#index'
 
   # See how all your routes lay out with "rake routes"
 

@@ -1,7 +1,15 @@
 class Action < ActiveRecord::Base
   attr_accessible :body, :coefficient, :hashtag, :tweet_id, :twitter_user_id, :user_id, :screen_name, :link
-
   belongs_to :user
+
+  BADGES = {"agriculture" => "Agriculture and Forests", 
+    "health" => "Health", 
+    "city" => "City Planning and Buildings",
+    "coast" => "Coastal Areas",
+    "biodiversity" => "Biodiversity and Nature",
+    "water" => "Water Management",
+    "disaster" => "Disaster Risk Reduction",
+    "blueapsays" => "BlueApSays" }
   
   def self.is_tweet_valid?(tweet)
     is_valid = (tweet.attrs[:in_reply_to_user_id].eql?(BLUEAP_USER_ID)) #is in reply to blueap
