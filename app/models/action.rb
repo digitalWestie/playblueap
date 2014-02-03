@@ -1,6 +1,7 @@
 class Action < ActiveRecord::Base
-  attr_accessible :body, :coefficient, :hashtag, :tweet_id, :twitter_user_id, :user_id, :screen_name, :link, :video_url, :photo_url
-  belongs_to :user
+  attr_accessible :body, :coefficient, :hashtag, :tweet_id, :twitter_user_id, 
+    :player_id, :screen_name, :link, :video_url, :photo_url
+  belongs_to :player
 
   BADGES = {"agriculture" => "Agriculture and Forests", 
     "health" => "Health", 
@@ -45,7 +46,7 @@ class Action < ActiveRecord::Base
 
         Action.find_or_create_by_tweet_id(tweet.attrs[:id], 
           :body => tweet.text, :coefficient => 1.0, 
-          :user_id => u.id,
+          :player_id => u.id,
           :twitter_user_id => tweet.attrs[:user][:id], 
           :hashtag => tweet.attrs[:entities][:hashtags].first[:text],
           :link => link,

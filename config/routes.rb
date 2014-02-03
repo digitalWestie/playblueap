@@ -1,5 +1,7 @@
 Blueap::Application.routes.draw do
   
+  devise_for :users
+
   get "actions" => "actions#index"
   get "totals" => "actions#totals"
 

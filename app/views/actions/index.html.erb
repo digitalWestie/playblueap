@@ -11,10 +11,10 @@
 <% for action in @actions %>
   <% standard  = Action::BADGES.keys.include?(action.hashtag) ? "standard" : "nonstandard" %>
   <li class="<%= action.hashtag %> <%= standard %> badge">
-    <div class = "profile_circle"><%= image_tag action.user.avatar_url %></div>
+    <div class = "profile_circle"><%= image_tag action.player.avatar_url %></div>
     <div class="bubble">
       <%= link_to(image_tag(action.photo_url, :style => "float:left; height:5em; margin-right:1em;"), action.photo_url, :target => "_blank") unless action.photo_url.blank? %>
-      <%= action.user.screen_name %>: 
+      <%= action.player.screen_name %>: 
       <% reply_txt = action.body[0..10].downcase.eql?("@playblueap") %>
       <%= action.body[11..-1] if reply_txt %>
       <%= link_to("sito", action.link, :target => "_blank") unless action.link.blank? %>
