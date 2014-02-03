@@ -1,4 +1,7 @@
 class ModerateActionsController < ApplicationController
+
+  before_filter :authenticate_user!
+  
   def index
     #if params.has_key?(:range_start) and params.has_key?(:range_end)
     #  Action.where(:created_at => 1.year.ago..Time.now)
