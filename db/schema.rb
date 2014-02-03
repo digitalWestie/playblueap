@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140203125619) do
+ActiveRecord::Schema.define(:version => 20140203131131) do
 
   create_table "actions", :force => true do |t|
     t.string   "hashtag"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20140203125619) do
     t.string   "video_url"
     t.string   "photo_url"
     t.boolean  "is_accepted",                  :default => true
+    t.datetime "moderated_at"
   end
 
   create_table "players", :force => true do |t|
