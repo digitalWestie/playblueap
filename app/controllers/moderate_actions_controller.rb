@@ -8,6 +8,9 @@ class ModerateActionsController < ApplicationController
   end
 
   def update
-    
+    rejected = params[:all_actions] - params[:accepted_actions]
+    Action.where(:id => rejected).each { |a| a.update_attribute(:moderated_at, Time.now); a.update_attribute(:is_accepted, true)  }
+    Action.where(:id => params[:accepted_actions]).each { |a| a.update_attribute(:moderated_at, Time.now) }
+    render :text => "yo."
   end
 end
