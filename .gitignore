@@ -14,4 +14,6 @@
 /log/*.log
 /tmp
 
+/blueap.sublime-project
+/blueap.sublime-workspace
 /config/application.yml
