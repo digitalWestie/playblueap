@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140203122630) do
+ActiveRecord::Schema.define(:version => 20140203125619) do
 
   create_table "actions", :force => true do |t|
     t.string   "hashtag"
@@ -19,13 +19,14 @@ ActiveRecord::Schema.define(:version => 20140203122630) do
     t.integer  "tweet_id",        :limit => 8
     t.text     "body"
     t.float    "coefficient"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
     t.string   "screen_name"
     t.integer  "twitter_user_id", :limit => 8
     t.string   "link"
     t.string   "video_url"
     t.string   "photo_url"
+    t.boolean  "is_accepted",                  :default => true
   end
 
   create_table "players", :force => true do |t|
