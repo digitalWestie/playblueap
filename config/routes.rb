@@ -1,9 +1,8 @@
 Blueap::Application.routes.draw do
-  
-  get "moderate_actions/index"
-
+    
   devise_for :users
 
+  get "moderate_actions" => "moderate_actions#index", :as => :moderate_actions
   get "actions" => "actions#index"
   get "totals" => "actions#totals"
 

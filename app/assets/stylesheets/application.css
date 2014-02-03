@@ -97,3 +97,11 @@ div.clear { clear:both; }
   height: 142px; 
 }
 .site-footer {}
+
+
+form.moderation {
+  width: 90%;
+  padding: 2%;
+}
+
+form.moderation table { font-size: 0.7em; }
