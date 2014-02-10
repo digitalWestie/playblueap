@@ -27,7 +27,7 @@ class Action < ActiveRecord::Base
     results = TWITTER.search("to:playblueap #{hashtag} -rt", :result_type => "recent", :count => 10)
     results.each do |tweet|
       if Action.is_tweet_valid?(tweet)
-        u = User.find_or_create_by_twitter_id(tweet.attrs[:user][:id], 
+        u = Player.find_or_create_by_twitter_id(tweet.attrs[:user][:id], 
           :avatar_url => tweet.attrs[:user][:profile_image_url], 
           :screen_name => tweet.attrs[:user][:screen_name])
 
