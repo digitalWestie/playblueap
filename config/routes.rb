@@ -1,5 +1,7 @@
 Blueap::Application.routes.draw do
     
+  get "admin_badges/index"
+
   devise_for :users, :controllers => { :registrations => 'registrations' }
 
   get "moderate_actions" => "moderate_actions#index", :as => :moderate_actions

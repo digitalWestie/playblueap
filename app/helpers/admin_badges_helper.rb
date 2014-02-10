@@ -1,0 +1,2 @@
+module AdminBadgesHelper
+end
