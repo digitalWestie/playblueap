@@ -1,6 +1,6 @@
 Blueap::Application.routes.draw do
     
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => 'registrations' }
 
   get "moderate_actions" => "moderate_actions#index", :as => :moderate_actions
   put "moderate_actions" => "moderate_actions#update", :as => :moderate_actions

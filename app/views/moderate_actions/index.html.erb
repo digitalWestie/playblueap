@@ -1,8 +1,10 @@
-<div style = "margin:1em; padding:0.5em; background-color:#EEE;">
-  <h2>Admin</h2>
-  <%= link_to 'Import tweets', '?import_tweets=true' %>
+<div style = "margin-bottom:1em; padding:0.5em; background-color:#EEE;">
+  <h2>Admin (<%= link_to current_user.email, edit_user_registration_path %>, <%= link_to 'sign out', destroy_user_session_path, :method => :delete %>)</h2>
+  <%= link_to 'Import tweets', '?import_tweets=true' %> | 
+  <%= link_to 'Manage badges', '?import_tweets=true' %>
 </div>
 
+<h3>Moderate Tweets</h3>
 <%= form_tag moderate_actions_path, :class => "moderation", :method => :put do %>
 
   <table>  
