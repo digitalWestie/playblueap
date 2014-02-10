@@ -1,11 +1,16 @@
 Blueap::Application.routes.draw do
-    
-  get "admin_badges/index"
-
+  
   devise_for :users, :controllers => { :registrations => 'registrations' }
 
-  get "moderate_actions" => "moderate_actions#index", :as => :moderate_actions
-  put "moderate_actions" => "moderate_actions#update", :as => :moderate_actions
+  get "admin/actions" => "moderate_actions#index", :as => :moderate_actions
+  put "admin/actions" => "moderate_actions#update", :as => :moderate_actions
+  
+  get "admin/badges" => 'admin_badges#index', :as => :admin_badges
+  get "admin/badges/new" => 'admin_badges#new', :as => :admin_new_badge
+  match "admin/badges/new" => 'admin_badges#new', :as => :new_admin_badge
+  post "admin/badges" => 'admin_badges#new', :as => :admin_badges
+  delete "admin/badges/:id" => 'admin_badges#destroy', :as => :admin_badge
+
   get "admin" => "moderate_actions#index"
   get "actions" => "actions#index"
   get "totals" => "actions#totals"

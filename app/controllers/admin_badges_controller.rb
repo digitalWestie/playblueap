@@ -19,4 +19,10 @@ class AdminBadgesController < ApplicationController
     end
   end
 
+  def destroy
+    @badge = Badge.find(params[:id])
+    @badge.destroy
+    redirect_to admin_badges_path
+  end
+
 end

@@ -1,2 +1,21 @@
-<h1>AdminBadges#index</h1>
-<p>Find me in app/views/admin_badges/index.html.erb</p>
+<%= render 'shared/admin_nav' %>
+
+<table>  
+<tr class="">
+  <th>Name</th>
+  <th>Hashtag</th>
+  <th>Required Actions</th>
+  <th>Manage</th>
+</tr>
+
+<% for badge in @badges %>
+  <tr>
+    <td style = ""><%= badge.name %></td>
+    <td style = ""><%= badge.hashtag %></td>
+    <td style = ""><%= badge.required_actions %></td>
+    <td style = ""><%= link_to 'delete', admin_badge_path(badge) %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Create badge', admin_new_badge_path %>
