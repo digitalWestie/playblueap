@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  required_actions: 1
+  hashtag: MyString
+
+two:
+  name: MyString
+  required_actions: 1
+  hashtag: MyString
