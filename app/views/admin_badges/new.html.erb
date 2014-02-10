@@ -1,0 +1,16 @@
+<%= render 'shared/admin_nav' %>
+
+<%= form_for @badge, :url => admin_badges_path do |f| %>
+  
+  <%= render 'shared/errors', :object => @badge %>
+
+  <%= f.label :name %><br/>
+  <%= f.text_field :name %><br/>
+  <%= f.label :hashtag %><br/>
+  <%= f.text_field :hashtag %><br/>
+  <%= f.label :required_actions %><br/>
+  <%= f.number_field :required_actions, :min => 1, :value => 1 %><br/>
+
+  <%= f.submit 'Save' %>
+
+<% end %>

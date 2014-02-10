@@ -103,11 +103,11 @@ form.moderation {
   padding: 2%;
 }
 
-form.moderation table { font-size: 0.7em; background-color: white; }
+.moderation table { font-size: 0.7em; background-color: white; }
 
-form.moderation table tr:nth-child(odd){ background:#EEE; }
+.moderation table tr:nth-child(odd){ background:#EEE; }
 
-form.moderation table td, 
-form.moderation table th { padding: 0.5em 0em; }
+.moderation table td, 
+.moderation table th { padding: 0.5em 0em; }
 
-form.moderation input[type="submit"] { float:right; padding:0.2em 0.3em; font-size:1em; margin:1em;} 
+.moderation input[type="submit"] { float:right; padding:0.2em 0.3em; font-size:1em; margin:1em;} 

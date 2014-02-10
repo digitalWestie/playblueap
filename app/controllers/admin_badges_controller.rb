@@ -14,7 +14,7 @@ class AdminBadgesController < ApplicationController
     @badge = Badge.new(params[:badge])
     if @badge.save 
       redirect_to admin_badges_path
-    else
+    else      
       render 'new'
     end
   end

@@ -1,5 +1,6 @@
 <div style = "margin-bottom:1em; padding:0.5em; background-color:#EEE;">
   <h2>Admin (<%= link_to current_user.email, edit_user_registration_path %>, <%= link_to 'sign out', destroy_user_session_path, :method => :delete %>)</h2>
   <%= link_to 'Import tweets', '?import_tweets=true' %> | 
-  <%= link_to 'Manage badges', admin_badges_path %>
+  <%= link_to 'Manage badges', admin_badges_path %> | 
+  <%= link_to 'Manage actions', admin_actions_path %> 
 </div>
