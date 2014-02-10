@@ -9,7 +9,7 @@ class ActionsController < ApplicationController
 
   def totals
     @badge_counts = {}
-    Action::BADGES.each do |hashtag, name|
+    Action::CATEGORIES.each do |hashtag, name|
       count = Action.accepted.where(:hashtag => hashtag).count
       @badge_counts.merge!({name => count})
     end

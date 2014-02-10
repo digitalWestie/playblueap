@@ -3,7 +3,7 @@ class Action < ActiveRecord::Base
     :player_id, :screen_name, :link, :video_url, :photo_url
   belongs_to :player
 
-  BADGES = {"agriculture" => "Agriculture and Forests", 
+  CATEGORIES = {"agriculture" => "Agriculture and Forests", 
     "health" => "Health", 
     "city" => "City Planning and Buildings",
     "coast" => "Coastal Areas",

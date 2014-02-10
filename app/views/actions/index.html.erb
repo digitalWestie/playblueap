@@ -1,15 +1,15 @@
-<h1>Badges</h1>
+<h1>Actions</h1>
 
 <ul class = "badge_tabs">
   <li><button class = "active" data-target = ".badge"><%= image_tag 'all.png' %><span>All</span></button></li>  
-  <% Action::BADGES.each do |hashtag, name| %>
+  <% Action::CATEGORIES.each do |hashtag, name| %>
     <li><button data-target = ".<%= hashtag %>"><%= image_tag "#{hashtag}.png" %><span><%= name %></span></button></li>
   <% end %>
 </ul>
 
 <ul class = "badges">
 <% for action in @actions %>
-  <% standard  = Action::BADGES.keys.include?(action.hashtag) ? "standard" : "nonstandard" %>
+  <% standard  = Action::CATEGORIES.keys.include?(action.hashtag) ? "standard" : "nonstandard" %>
   <li class="<%= action.hashtag %> <%= standard %> badge">
     <div class = "profile_circle"><%= image_tag action.player.avatar_url %></div>
     <div class="bubble">
