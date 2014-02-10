@@ -4,6 +4,7 @@ Blueap::Application.routes.draw do
 
   get "moderate_actions" => "moderate_actions#index", :as => :moderate_actions
   put "moderate_actions" => "moderate_actions#update", :as => :moderate_actions
+  get "admin" => "moderate_actions#index"
   get "actions" => "actions#index"
   get "totals" => "actions#totals"
 

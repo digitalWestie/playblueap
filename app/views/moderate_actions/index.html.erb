@@ -1,3 +1,8 @@
+<div style = "margin:1em; padding:0.5em; background-color:#EEE;">
+  <h2>Admin</h2>
+  <%= link_to 'Import tweets', '?import_tweets=true' %>
+</div>
+
 <%= form_tag moderate_actions_path, :class => "moderation", :method => :put do %>
 
   <table>  

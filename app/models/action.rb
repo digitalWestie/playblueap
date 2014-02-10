@@ -24,13 +24,12 @@ class Action < ActiveRecord::Base
   end
 
   def self.get_latest_actions(hashtag="")
-    results = TWITTER.search("to:playblueap #{hashtag}", :result_type => "recent", :count => 10)
+    results = TWITTER.search("to:playblueap #{hashtag} -rt", :result_type => "recent", :count => 10)
     results.each do |tweet|
       if Action.is_tweet_valid?(tweet)
         u = User.find_or_create_by_twitter_id(tweet.attrs[:user][:id], 
           :avatar_url => tweet.attrs[:user][:profile_image_url], 
           :screen_name => tweet.attrs[:user][:screen_name])
-
 
         link = ""
         link = tweet.attrs[:entities][:urls].first[:expanded_url] unless tweet.attrs[:entities][:urls].blank?
