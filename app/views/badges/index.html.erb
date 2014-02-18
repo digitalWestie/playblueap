@@ -1,0 +1,21 @@
+<% content_for :head do %>
+<% end %>
+
+<h1>Badges</h1>
+
+<% for badge in @badges %>
+  <div style = "float:left; margin:1em; padding:2em; text-align:center; background-color:#EFEFEF; border-radius:0.3em;">
+    <%= image_tag "all.png", :style => "display:block; margin:0 auto;" %>
+    <%= link_to badge.name, badge_path(badge) %>
+  </div>
+<% end %>
+
+<div style = "clear:both"></div>
+
+<br/>
+<br/>
+
+<%= link_to 'Back to Actions', actions_path %> 
+
+<br/><br/><br/><br/>
+

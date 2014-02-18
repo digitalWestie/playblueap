@@ -1,0 +1,15 @@
+<h1>Badges:<%= @badge.name %></h1>
+
+<% for player in @badge.players %>
+  <div style = "float:left; margin:1em; padding:2em; text-align:center; background-color:#EEE; border-radius:0.3em;">
+    <div class = "profile_circle"><%= image_tag player.avatar_url %></div>
+    <%= player.screen_name %>
+  </div>
+<% end %>
+<div style = "clear:both"></div>
+<br/>
+
+<%= link_to 'Back to Badges', badges_path %>
+
+<br/><br/><br/><br/>
+
