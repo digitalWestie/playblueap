@@ -111,3 +111,12 @@ form.moderation {
 .moderation table th { padding: 0.5em 0em; }
 
 .moderation input[type="submit"] { float:right; padding:0.2em 0.3em; font-size:1em; margin:1em;} 
+
+.hidden { display:none; } 
+
+a.ai_switch { color:#333; text-decoration: none; padding:5px 10px; border-radius: 4px; -moz-border-radius:4px; -webkit-border-radius:4px; }
+a.ai_switch.active { color:white; background-color: #23acdc; }
+a.ai_switch:hover { text-decoration: underline; }
+a.ai_switch.active:hover { text-decoration: none; }
+
+div#info_embed {  float: left; width: 78%; }

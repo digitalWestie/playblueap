@@ -1,4 +1,9 @@
-<h1>Actions</h1>
+<h1 style = "margin-top:0.1em; margin-bottom:1.1em;">
+  <%= link_to 'Azioni', '#', :class => "active ai_switch", 
+    :data => { :target => "#badge_list" } %> / 
+  <%= link_to 'Informazione', '#', :data => { :target => "#info_embed" }, 
+  :class => "ai_switch" %>
+</h1>
 
 <ul class = "badge_tabs">
   <li><button class = "active" data-target = ".badge"><%= image_tag 'all.png' %><span>All</span></button></li>  
@@ -7,7 +12,7 @@
   <% end %>
 </ul>
 
-<ul class = "badges">
+<ul class = "badges " id = "badge_list">
 <% for action in @actions %>
   <% standard  = Action::CATEGORIES.keys.include?(action.hashtag) ? "standard" : "nonstandard" %>
   <li class="<%= action.hashtag %> <%= standard %> badge">
@@ -23,15 +28,47 @@
 <% end %>
 </ul>
 
+<div class = "information hidden" id = "info_embed" >
+  <div class = "info_embed badge " id = "blueap_intro">
+    
+    <p><%= link_to "Il Progetto BLUE AP", "http://www.blueap.eu/site/il-progetto/", :target=> "_blank" %>, nasce con l’obiettivo di dotare la città di Bologna di un piano di adattamento al cambiamento climatico, che preveda anche la sperimentazione di alcune misure concrete da attuare a livello locale, per rendere la città meno vulnerabile e in grado di agire in caso di alluvioni, siccità e altre conseguenze del mutamento del clima.</p>
+
+    <canvas style = "width:100%;" id = "brochure_canvas"></canvas>
+  </div>
+
+  <% Action::CATEGORIES.each do |hashtag, name| %>
+    <div class = "<%= hashtag %> hidden info_embed badge">
+    <%= render "#{hashtag}_info" rescue "No info" %>
+    </div>
+  <% end %>
+</div>
+
 <div class = "clear"></div>
 
 <%= javascript_tag do %>
+  $('a.ai_switch').click(function(e){ 
+    $('a.ai_switch').removeClass('active');
+    $(this).addClass('active');
+
+    $('#badge_list').hide();
+    $('#info_embed').hide();
+    var tar = $(this).attr('data-target');
+    $(tar).show();
+  });
+
   $('ul.badge_tabs li button').click(function(e){ 
     $('li.badge').hide();
+    $('div.info_embed').hide();
+
     $('ul.badge_tabs li button').removeClass('active');
     $(this).addClass('active');
+    
     var t = $(this).attr('data-target');
+
     if (t == ".blueapcall"){ console.log("call"); $('li.badge.nonstandard').show();  }
+    
     $('li'+t).show();
+    if (t == ".badge"){ $('div#blueap_intro').show(); } else { $('div.info_embed'+t).show(); }
+    
   });
 <% end %>
