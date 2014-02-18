@@ -5,6 +5,9 @@ class Badge < ActiveRecord::Base
   validates_presence_of :required_actions
 
   def players
-    Player.joins(:actions).where("actions.hashtag" => hashtag).uniq
+    as = Action.where(:hashtag => hashtag).select(:player_id)
+    pids = as.collect {|a| a.player_id }
+    pids.delete_if {|p| pids.count(p) < required_actions }
+    Player.where(:id => pids)
   end
 end
