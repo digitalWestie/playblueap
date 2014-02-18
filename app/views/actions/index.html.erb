@@ -16,7 +16,7 @@
       <%= link_to(image_tag(action.photo_url, :style => "float:left; height:5em; margin-right:1em;"), action.photo_url, :target => "_blank") unless action.photo_url.blank? %>
       <%= action.player.screen_name %>: 
       <% reply_txt = action.body[0..10].downcase.eql?("@playblueap") %>
-      <%= action.body[11..-1] if reply_txt %>
+      <%= reply_txt ? action.body[11..-1] : action.body %>
       <%= link_to("sito", action.link, :target => "_blank") unless action.link.blank? %>
     </div>
   </li>
