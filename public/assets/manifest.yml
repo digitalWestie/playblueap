@@ -1,4 +1,6 @@
 ---
+actforthecity.png: actforthecity-aa9987028d27b04144631e529976237f.png
+actforthecity/index.png: actforthecity-aa9987028d27b04144631e529976237f.png
 agriculture.png: agriculture-0c0bc93c790ebfef6e15aa39a55591a7.png
 agriculture/index.png: agriculture-0c0bc93c790ebfef6e15aa39a55591a7.png
 agriculture/agriculture_and_forests.txt: agriculture/agriculture_and_forests-dede860fe05223a75e7a9381805e192d.txt
@@ -81,6 +83,8 @@ disaster/rischio_idraulico_per_tipologia_di_abitazione.JPG: disaster/rischio_idr
 disaster/rischio_idraulico_per_tipologia_di_abitazione/index.JPG: disaster/rischio_idraulico_per_tipologia_di_abitazione-231c31ef5c3528456de93a082d115a89.JPG
 disaster/risultato_simulazione_evento_straordinario.JPG: disaster/risultato_simulazione_evento_straordinario-d26e2d3ccf431a6b55902b9347ae8ad9.JPG
 disaster/risultato_simulazione_evento_straordinario/index.JPG: disaster/risultato_simulazione_evento_straordinario-d26e2d3ccf431a6b55902b9347ae8ad9.JPG
+gray_blueap.png: gray_blueap-753c5962e065045293f2b49cc51b8628.png
+gray_blueap/index.png: gray_blueap-753c5962e065045293f2b49cc51b8628.png
 health.png: health-51c96896dfe445629546d7af69af2628.png
 health/index.png: health-51c96896dfe445629546d7af69af2628.png
 health/health.txt: health/health-81c28bab3870aab0bce5134a72186f1e.txt
@@ -89,6 +93,8 @@ health/isola_di_calore_urbano.JPG: health/isola_di_calore_urbano-4647ceab5ae976b
 health/isola_di_calore_urbano/index.JPG: health/isola_di_calore_urbano-4647ceab5ae976b756203ea54a14982f.JPG
 health/previsione_disagio_bioclimatico.JPG: health/previsione_disagio_bioclimatico-8fe4c394f6871b3db19c7d67118a9caf.JPG
 health/previsione_disagio_bioclimatico/index.JPG: health/previsione_disagio_bioclimatico-8fe4c394f6871b3db19c7d67118a9caf.JPG
+instruction.png: instruction-fadae6fb4ee6813b26e53c4b7b8b566a.png
+instruction/index.png: instruction-fadae6fb4ee6813b26e53c4b7b8b566a.png
 logo_blueap.JPG: logo_blueap-897f35358fa2c2434b63c9b41b4db697.JPG
 logo_blueap/index.JPG: logo_blueap-897f35358fa2c2434b63c9b41b4db697.JPG
 logo_comune_kyotoclub_ambienteitalia_arpa.JPG: logo_comune_kyotoclub_ambienteitalia_arpa-596d824fae6f394cc67185af9599738d.JPG
@@ -121,7 +127,7 @@ load_pdfs.js: load_pdfs-34e2fafab0003e2f3320b286355e8cd5.js
 load_pdfs/index.js: load_pdfs-34e2fafab0003e2f3320b286355e8cd5.js
 pdf.worker.js: pdf.worker-8d142e5c1bb5877301c564d5857de4cc.js
 pdf/index.worker.js: pdf.worker-8d142e5c1bb5877301c564d5857de4cc.js
-application.css: application-61d567c052201e41d39ab41418c197a0.css
-application/index.css: application-61d567c052201e41d39ab41418c197a0.css
+application.css: application-e8ff88f68d2718c79e89f77ebb40b275.css
+application/index.css: application-e8ff88f68d2718c79e89f77ebb40b275.css
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
