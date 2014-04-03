@@ -31,7 +31,8 @@ gem 'jquery-rails'
 gem 'twitter'
 gem 'figaro'
 gem "devise", "~> 3.2.2"
-
+gem 'oauth'
+gem 'oauth2'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

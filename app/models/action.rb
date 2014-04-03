@@ -20,11 +20,19 @@ class Action < ActiveRecord::Base
     is_valid = (tweet.attrs[:in_reply_to_user_id].eql?(BLUEAP_USER_ID)) #is in reply to blueap
     is_valid = (is_valid and !tweet.attrs[:user][:id].eql?(BLUEAP_USER_ID)) #cant be from the app
     is_valid = (is_valid and !tweet.attrs[:entities][:hashtags].blank?) #must have an action hashtag
-    is_valid
+    is_valid and !tweet.retweet? #is not a retweet
+  end
+
+  def self.latest_tweet
+    order('created_at DESC').first
   end
 
   def self.get_latest_actions(hashtag="")
-    results = TWITTER.search("to:playblueap #{hashtag} -rt", :result_type => "recent", :count => 10)
+    #results = TWITTER.search("to:playblueap #{hashtag} -rt", :result_type => "recent", :count => 10)
+    tweet_id = 1
+    tweet_id = latest_tweet.tweet_id unless latest_tweet.try(:tweet_id).blank?
+    
+    results = TWITTER.mentions_timeline(:since_id => tweet_id)
     results.each do |tweet|
       if Action.is_tweet_valid?(tweet)
         u = Player.find_or_create_by_twitter_id(tweet.attrs[:user][:id], 
