@@ -1,40 +1,39 @@
 <% content_for :head do %>
 <style type="text/css">
   
-  ul.badge_set { display:block; margin:0 auto;   }
-  ul.badge_set li { display:inline-block; margin:0.5em; text-align: center; }
-  img#blueap_logo, ul.badge_set li img { -moz-opacity: 0.50;
-    -khtml-opacity: 0.50;
-    opacity: 0.50;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=50);
-  }
-
-.bubble 
-{
-position: absolute;
-width: 50%;
-padding: 0px;
-background: #FFF;
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
-z-index: 100;
-float: right;
-right: 0px;
-top: 20%;
+ul.badge_set { display:block; margin:0 auto;   }
+ul.badge_set li { display:inline-block; margin:0.5em; text-align: center; }
+img#blueap_logo, ul.badge_set li img { -moz-opacity: 0.50;
+  -khtml-opacity: 0.50;
+  opacity: 0.50;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=50);
 }
+.bubble { position: absolute;
+  width: 50%;
+  padding: 0px;
+  background: #FFF;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  z-index: 100;
+  float: right;
+  right: 0px;
+  top: 20%;
+}
+.bubble div.bubble_links { margin-bottom:0.2em; padding:5px; float:right; }
+.bubble div.bubble_links a { text-decoration:none; font-size:0.7em; display:inline-block; font-style:italic; }
 .bubble h3 { width: 94%; padding: 3%; margin: 0em; }
-.bubble:after  {
-content: "";
-position: absolute;
-top: 40%;
-left: -14px;
-border-style: solid;
-border-width: 11px 15px 11px 0;
-border-color: transparent #FFF;
-display: block;
-width: 0;
-z-index: 1;
+.bubble:after {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: -14px;
+  border-style: solid;
+  border-width: 11px 15px 11px 0;
+  border-color: transparent #FFF;
+  display: block;
+  width: 0;
+  z-index: 1;
 }
 
 .bubble.response { top: 50%; right: 2%; }
@@ -45,18 +44,18 @@ z-index: 1;
 }
 
 .bubble.response textarea { width: 94%;
-margin: 3% auto;
-display: block; 
-border-radius: 0.4em;
-height: 4em; font-family: 'Varela Round', sans-serif; font-size:1.1em; }
+  margin: 3% auto;
+  display: block; 
+  border-radius: 0.4em;
+  height: 4em; font-family: 'Varela Round', sans-serif; font-size:1.1em; }
 .bubble.response a { 
-margin-bottom: 0.5em;
-margin-right: 1em;
-float: right;
-background-color: #eee;
-padding: 0.2em;
-text-decoration: none;
-border-radius: 0.3em; 
+  margin-bottom: 0.5em;
+  margin-right: 1em;
+  float: right;
+  background-color: #eee;
+  padding: 0.2em;
+  text-decoration: none;
+  border-radius: 0.3em; 
 }
 
 .bubble.response a:hover { color:white; background-color: silver; }
@@ -92,15 +91,19 @@ line-height: 2em;">PlayBlueap e' un gioco sociale dove cittadini vengono premiat
 margin: 0 auto; position:relative;">
 
   <div class = "bubble">
-    <h3><%= @tweet %><%= link_to 'http://twitter.com/playblueap', :target => '_blank', :style => "text-decoration:none; margin-bottom:0.2em; padding:5px; font-size:0.7em; display:inline-block; float:right; font-style:italic;" do %>
-        PlayBlueAp Twitter <%= image_tag('tw.png') %>
-      <% end %>
-    </h3>
+    <h3><%= @tweet %></h3>
+    <div class = "bubble_links">
+    <%= link_to "Azioni gia' completate", actions_path, :class => "ontwitter" %> | 
+    <%= link_to 'http://twitter.com/playblueap', :target => '_blank', :class => "ontwitter" do %>
+      PlayBlueAp Twitter <%= image_tag('tw.png') %>
+    <% end %>
+    </div>
   </div>
 
   <div class = "response bubble" style = "">
     <%= text_area_tag :response, "@playblueap", :id => "response_text" %>
     <a href="https://twitter.com/intent/tweet?screen_name=playblueap" target="_blank" id="respond_link">Rispondi</a>
+    
   </div>
 
   <%= image_tag 'bologna_piazza.jpg', :style => "width: 60%;
