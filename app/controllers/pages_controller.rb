@@ -1,5 +1,9 @@
 class PagesController < ApplicationController
   def index
-    @tweet = TWITTER.user_timeline.first.text
+    begin 
+      @tweet = TWITTER.user_timeline.first.text
+    rescue
+      @tweet = ""
+    end
   end
 end

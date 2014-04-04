@@ -9,6 +9,35 @@
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=50);
   }
 
+.bubble 
+{
+position: absolute;
+width: 50%;
+height: 7em;
+padding: 0px;
+background: #FFF;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+left: 46%;
+z-index: 100;
+margin-top: 11%;
+}
+.bubble h3 { width:90%; padding:0px; margin:2em 5%; }
+.bubble:after 
+{
+content: "";
+position: absolute;
+top: 49px;
+left: -15px;
+border-style: solid;
+border-width: 11px 15px 11px 0;
+border-color: transparent #FFF;
+display: block;
+width: 0;
+z-index: 1;
+}
+
 </style>
 <% end %>
 
@@ -36,8 +65,26 @@ color: #333;
 font-size: 1.4em;
 line-height: 2em;">PlayBlueap e' un gioco sociale dove cittadini vengono premiati per azioni a favore della salute ambientale della citta'</h2>
 
-<%= image_tag 'actforthecity.png', :style => "width:90%; display:block; margin:0 auto;" %>
+<div style = "overflow:hidden;width: 80%;
+margin: 0 auto;">
 
+  <div class = "bubble">
+    <h3><%= @tweet %><%= link_to 'http://twitter.com/playblueap', :target => '_blank', :style => "text-decoration:none; margin-left:5px; font-size:0.7em; font-style:italic;" do %>
+        PlayBlueAp Twitter <%= image_tag('tw.png') %>
+      <% end %>
+    </h3>
+  </div>
+
+<%= image_tag 'bologna_piazza.jpg', :style => "width: 60%;
+display: block;
+margin: 0 auto;
+border-radius: 50%;
+position: relative;
+left: -25%;" %>
+
+</div>
+
+<!--
 <br/>
 
-<%= image_tag 'instruction.png', :style => "width:90%; display:block; margin:0 auto;" %>
+<%= image_tag 'instruction.png', :style => "width:90%; display:block; margin:0 auto;" %>-->
