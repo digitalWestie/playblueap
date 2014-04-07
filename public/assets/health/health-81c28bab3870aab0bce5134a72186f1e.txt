@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Health</title>
+</head>
+<body>
+<strong><3.1>Campagne di misure ed allerta</strong><p>
+Nel 2001 e 2006 sono state svolte campagne di misura estive per determinare la distribuzione e magnitudine dell’isola di calore e il disagio bioclimatico a Bologna. I risultati della campagna del 2006 indicano che l’analisi delle condizioni bioclimatiche condotta rispetto alla temperatura apparente e all’indice di Thom è sovrapponibile ed assimilabile a quella della sola temperatura. All’interno dell’area urbana le condizioni bioclimatiche sono abbastanza uniformi durante il giorno, mentre si differenziano sensibilmente durante la notte. Inoltre, nella notte sono marcatamente peggiori all’interno dell’area urbana rispetto all’area peri-urbana e rurale pianeggiante. In collina le condizioni sono più disagevoli di quelle dell’area pianeggiante.  
+<p>
+Nelle ore centrali della giornata le condizioni bioclimatiche più disagevoli si riscontrano nelle aree rurali con temperature apparenti di circa 1-2°C maggiori, pari a 0,5-1 unità dell’indice di Thom, rispetto alla stazione di riferimento urbana. La temperatura della collina (Sasso Marconi) è di circa 1 °C  più mite rispetto a quella del riferimento urbano. 
+<p>
+Le temperature massime diurne si raggiungono sia nelle centraline urbane che in quelle rurali  verso le 16. I valori minimi verso le 6 del mattino. Le temperature massime sono molto  prossime in tutte le stazioni con differenze contenute entro 1°C. I valori più elevati si riscontrano nelle centraline verso la pianura rurale nord. Le centraline collocate in pianura nelle aree rurali mostrano valori di temperatura minima in media di 3-4 °C inferiori rispetto alla centralina urbana di riferimento. Valori inferiori di circa 1 °C rispetto al riferimento urbano si riscontrano presso le stazioni in zona peri-urbana e collinare. 
+<p>
+I valori massimi di umidità relativa si verificano mediamente verso le 8 del mattino, con marcate differenze: nell’area rurale pianeggiante l’umidità relativa massima risulta circa il 25% in più  rispetto alla stazione di riferimento urbana; la differenza tipica tra la zona peri-urbana ed il riferimento urbano è 10%.  
+<p>
+Umidità relative massime leggermente inferiori al riferimento urbano si riscontrano nella stazione collinare di Sasso Marconi. Mediamente, le umidità relative nelle stazioni rurali di pianura sono superiori per circa il 15%. I valori minimi si collocano verso le 17. Le differenze tra i vari siti rispetto ai valori  minimi di umidità relativa sono risultate pressoché nulle. 
+<p>
+La campagna del 2001, con 9 stazioni di riferimento e una rete di 21 termometri, ha permesso di disegnare i confini dell’isola di calore urbano in una data estiva di riferimento e la sua evoluzione oraria diurna e notturna. 
+
+<img src="health/isola_di_calore_urbano.jpg"><p>
+Le analisi effettuate tramite un profilatore di vento hanno rivelato un regime di brezza urbana, combinato con una attenuazione dell’intensità dei venti negli strati più bassi dell’aria, più forte nell’aera urbana che in quella rurale. La disponibilità di dati, risultati delle campagne di misura e modellistica ha permesso la costruzione di sistemi di previsione ed allertamento locale come il progetto di prevenzione delle ondate di calore del Comune di Bologna, in collaborazione con Asl, Arpa Emilia Romagna, Protezione Civile, Servizi Sociali dei Quartieri, del Servizio Ages, associazioni di volontariato e Cup 2000: Il progetto di prevenzione e mitigazione degli effetti delle ondate di calore è rivolto in particolare alle persone anziane, sole o in nucleo, con una situazione di fragilità elevata, determinata da problemi di natura sanitaria, condizioni sociali ed economiche. Il servizio si basa su una rete di solidarietà e su iniziative di sensibilizzazione e sostegno, quali l'informazione, l'orientamento ai servizi diurni e il potenziamento di distribuzione di acqua e frutta tramite la rete dei servizi territoriali, per gli adulti in difficoltà. La rete è assicurata delle Associazioni di volontariato, Centri Sociali, le farmacie aderenti e i Servizi di assistenza domiciliare.
+<p>
+Il progetto è attivo dal 15 giugno al 15 settembre di ogni anno e nel 2013 raggiunge 5.181 anziani, individuati in collaborazione con l'Asl. A loro è inviata una lettera con le informazioni relative al progetto, il numero verde da contattare e i consigli da mettere in atto, per proteggersi dalle alte temperature. Nello specifico, è attivo un numero verde  rivolto a qualsiasi cittadino per ricevere informazioni su come fronteggiare il caldo intenso. E’ prevista la distribuzione di materiale informativo presso i punti Urp della città, i Centri sociali anziani, le parrocchie, le farmacie pubbliche e private aderenti, i sindacati dei pensionati, i punti di prenotazione Cup e le associazioni di volontariato.
+<p> 
+Per gli anziani particolarmente fragili, inoltre, l’Azienda USL di Bologna promuove, insieme alla Conferenza Territoriale Sociale e Sanitaria, il progetto di sostegno “e-Care”, che prevede telefonate con frequenza settimanale, eventuali interventi di assistenza a domicilio, attività di socializzazione presso strutture ricreative. ARPA fornisce le previsioni bioclimatiche a scala regionale e locale, con specifica attenzione alle aree urbane, dove si concentra la maggior parte della popolazione e dove si verificano le situazioni di maggior criticità.
+<p>
+<img src="health/previsione_disagio_bioclimatico.jpg"><p>
+</body>
+</html>
