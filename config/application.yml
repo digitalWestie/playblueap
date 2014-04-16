@@ -1,0 +1,19 @@
+TWITTER_CONSUMER_KEY: "***REMOVED***"
+TWITTER_CONSUMER_SECRET: "***REMOVED***"
+TWITTER_ACCESS_TOKEN: "***REMOVED***"
+TWITTER_ACCESS_SECRET: "***REMOVED***"
+#development:
+#production:
+#
+# <OAuth::AccessToken:0x0000000608a060 
+# @token="***REMOVED***", 
+# @secret="***REMOVED***", 
+# @consumer=#<OAuth::Consumer:0x00000005dd7958 @key="***REMOVED***", 
+# @secret="***REMOVED***", 
+# params={:oauth_token=>"***REMOVED***", 
+#  "oauth_token"=>"***REMOVED***", 
+#  :oauth_token_secret=>"***REMOVED***", 
+#  "oauth_token_secret"=>"***REMOVED***", 
+#  :user_id=>"2298347186", "user_id"=>"2298347186", 
+#  :screen_name=>"PlayBlueap", 
+#  "screen_name"=>"PlayBlueap"}>

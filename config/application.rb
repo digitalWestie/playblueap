@@ -16,7 +16,22 @@ module Blueap
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
-    # config.autoload_paths += %W(#{config.root}/extras)
+    # Load files from the lib directory, including subfolders.
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
+    config.before_initialize do
+      require 'refinery_patch'
+      require 'restrict_refinery_to_refinery_users'
+    end
+
+    extend Refinery::Engine
+    after_inclusion do
+      [::ApplicationController, ::ApplicationHelper, ::Refinery::AdminController].each do |c|
+        c.send :include, ::RefineryPatch
+      end
+
+      ::Refinery::AdminController.send :include, ::RestrictRefineryToRefineryUsers
+      ::Refinery::AdminController.send :before_filter, :restrict_refinery_to_refinery_users
+    end
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.

@@ -6,7 +6,9 @@ gem 'rails', '3.2.14'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development do
+  group :development, :test do
   gem 'sqlite3'
+end
   gem "pry"
 end
 
@@ -27,12 +29,20 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 2.3.0'
 gem 'twitter'
 gem 'figaro'
 gem "devise", "~> 3.2.2"
-gem 'oauth'
-gem 'oauth2'
+
+gem 'refinerycms-core', '~> 2.1.2'
+gem 'refinerycms-dashboard', '~> 2.1.2'
+gem 'refinerycms-images', '~> 2.1.2'
+gem 'refinerycms-pages', '~> 2.1.2'
+gem 'refinerycms-resources', '2.1.2'
+
+#gem 'oauth'
+#gem 'oauth2'
+#gem 'refinerycms', '~> 2.1.2'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

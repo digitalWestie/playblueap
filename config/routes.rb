@@ -1,5 +1,12 @@
 Blueap::Application.routes.draw do
-  
+
+  # This line mounts Refinery's routes at the root of your application.
+  # This means, any requests to the root URL of your application will go to Refinery::PagesController#home.
+  # If you would like to change where this extension is mounted, simply change the :at option to something different.
+  #
+  # We ask that you don't use the :as option here, as Refinery relies on it being the default of "refinery"
+  root :to => 'pages#index'
+    
   devise_for :users, :controllers => { :registrations => 'registrations' }
 
   get "admin/actions" => "moderate_actions#index", :as => :moderate_actions
@@ -17,6 +24,10 @@ Blueap::Application.routes.draw do
   get "badges" => "badges#index", :as => :badges
   get "badges/:id" => "badges#show", :as => :badge
   get "totals" => "actions#totals"
+
+  mount Refinery::Core::Engine, :at => '/'
+
+  # root :to => 'refinery/pages#home' for refinery
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -67,7 +78,7 @@ Blueap::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'pages#index'
+  
 
   # See how all your routes lay out with "rake routes"
 
