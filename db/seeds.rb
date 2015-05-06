@@ -8,3 +8,15 @@
 
 # Added by Refinery CMS Pages extension
 Refinery::Pages::Engine.load_seed
+
+#Create User Roles
+Role.create(:title => 'Refinery')
+Role.create(:title => 'Superuser')
+
+#Assign user roles
+user = User.new(email: "admin@admin.com")
+user.password = "password"
+user.save
+user.roles << Role.find_by_title('Refinery')
+user.roles << Role.find_by_title('Superuser')
+user.save

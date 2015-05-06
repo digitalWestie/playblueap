@@ -1,6 +1,4 @@
-class AdminBadgesController < ApplicationController
-
-  before_filter :authenticate_user!
+class AdminBadgesController < AdminController
 
   def index
     @badges = Badge.all

@@ -1,6 +1,4 @@
-class ModerateActionsController < ApplicationController
-
-  before_filter :authenticate_user!
+class ModerateActionsController < AdminController
   
   def index
     #if params.has_key?(:range_start) and params.has_key?(:range_end)
