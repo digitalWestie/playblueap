@@ -16,6 +16,10 @@ class Action < ActiveRecord::Base
     where(:is_accepted => true).where("moderated_at IS NOT NULL")
   end
 
+  def self.rejected
+    where(:is_accepted => false).where("moderated_at IS NOT NULL")
+  end
+
   def self.is_tweet_valid?(tweet)
     is_valid = (tweet.attrs[:in_reply_to_user_id].eql?(BLUEAP_USER_ID)) #is in reply to blueap
     is_valid = (is_valid and !tweet.attrs[:user][:id].eql?(BLUEAP_USER_ID)) #cant be from the app

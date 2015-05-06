@@ -20,6 +20,7 @@ Blueap::Application.routes.draw do
   delete "admin/badges/:id" => 'admin_badges#destroy', :as => :admin_badge
 
   get "admin" => "moderate_actions#index"
+  get "admin/rejected" => "moderate_actions#rejected", :as => :admin_rejected
   get "actions" => "actions#index", :as => :actions
   get "badges" => "badges#index", :as => :badges
   get "badges/:id" => "badges#show", :as => :badge

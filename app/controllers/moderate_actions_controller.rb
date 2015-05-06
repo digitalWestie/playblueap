@@ -11,9 +11,13 @@ class ModerateActionsController < ApplicationController
     #end
   end
 
+  def rejected
+    @actions = Action.rejected
+  end
+
   def update
     rejected = params[:all_actions] - params[:accepted_actions]
-    Action.where(:id => rejected).each { |a| a.update_attribute(:moderated_at, Time.now); a.update_attribute(:is_accepted, true)  }
+    Action.where(:id => rejected).each { |a| a.update_attribute(:moderated_at, Time.now); a.update_attribute(:is_accepted, false) }
     Action.where(:id => params[:accepted_actions]).each { |a| a.update_attribute(:moderated_at, Time.now) }
     redirect_to moderate_actions_path, :notice => "Actions updated"
   end
