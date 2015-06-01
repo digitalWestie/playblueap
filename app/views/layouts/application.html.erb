@@ -10,22 +10,21 @@
 </head>
 <body>
 
-<div class ="wrapper page_wrap">
+<div class ="background page_wrap">
   <header style= "padding:0em 1%;">
-    <h1>Play:BLUEAP</h1>
+    <%= image_tag 'blueap_logo.png', style: "margin: 1%; width: 66%; max-width: 380px;" %>
   </header>
   <div style = "padding:1%;">
     <%= yield %>
   </div>
 </div>
 
-<footer class="site-footer" style = "">
-  <div style = "padding:1em; background-color:#111; color:white; height:100%; margin-top:2em;">
-    <div style = "margin: 0 auto; width:22%;">
-      <%= link_to image_tag("badges.png"), main_app.badges_path %>
-      <%= link_to image_tag("community.png"), main_app.actions_path %>
-      <%= link_to image_tag("play.png"), main_app.actions_path %>
-    </div>
+<footer>
+  <div class = "partners">
+      <%= link_to image_tag("life_logo.jpg"), main_app.badges_path %>
+      <%= link_to image_tag("bologna_logo.jpg"), main_app.actions_path %>
+      <%= link_to image_tag("arpa_logo.png"), main_app.actions_path %>
+      <%= link_to image_tag("kyoto_logo.png"), main_app.actions_path %>
   </div>
 </footer>
 
