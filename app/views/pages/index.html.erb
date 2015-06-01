@@ -1,91 +1,31 @@
 <% content_for :head do %>
 <style type="text/css">
-  
-ul.badge_set { display:block; margin:0 auto;   }
-ul.badge_set li { display:inline-block; margin:0.5em; text-align: center; }
-img#blueap_logo, ul.badge_set li img { -moz-opacity: 0.50;
-  -khtml-opacity: 0.50;
-  opacity: 0.50;
-  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=50);
-}
-.bubble { position: absolute;
-  width: 50%;
-  padding: 0px;
-  background: #FFF;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  z-index: 100;
-  float: right;
-  right: 0px;
-  top: 10%;
-}
-.bubble div.bubble_links { margin-bottom:0.2em; padding:5px; float:right; }
-.bubble div.bubble_links a { text-decoration:none; font-size:0.7em; display:inline-block; font-style:italic; }
-.bubble h3 { width: 94%; padding: 3%; margin: 0em; }
-.bubble:after {
-  content: "";
-  position: absolute;
-  top: 40%;
-  left: -14px;
-  border-style: solid;
-  border-width: 11px 15px 11px 0;
-  border-color: transparent #FFF;
-  display: block;
-  width: 0;
-  z-index: 1;
-}
-
-.bubble.response { top: 64%; right: 2%; }
-.bubble.response:after { border-width: 15px 0px 15px 20px;
-  top: 50%;
-  left: initial;
-  right: -3%; 
-}
-
-.bubble.response textarea { width: 94%;
-  margin: 3% auto;
-  display: block; 
-  border-radius: 0.4em;
-  height: 4em; font-family: 'Varela Round', sans-serif; font-size:1.1em; }
-.bubble.response a { 
-  margin-bottom: 0.5em;
-  margin-right: 1em;
-  float: right;
-  background-color: #eee;
-  padding: 0.2em;
-  text-decoration: none;
-  border-radius: 0.3em; 
-}
-
-.bubble.response a:hover { color:white; background-color: silver; }
-
 </style>
 <% end %>
 
-<%= image_tag 'gray_blueap.png', :id => 'blueap_logo', :style => "width:37%; display: block;
-margin: 0 auto;" %>
-
+<!--
 <div style = "margin:0 auto; width:66%;">
 <ul class = "badge_set">
-<li><%= image_tag 'all.png' %></li>
-<li><%= image_tag 'agriculture.png' %></li>
-<li><%= image_tag 'coast.png' %></li>
-<li><%= image_tag 'health.png' %></li>
-<li><%= image_tag 'city.png' %></li>
-<li><%= image_tag 'disaster.png' %></li>
-<li><%= image_tag 'water.png' %></li>
-<li><%= image_tag 'biodiversity.png' %></li>
-<li><%= image_tag 'blueapcall.png' %></li>
+  <li><%= image_tag 'all.png' %></li>
+  <li><%= image_tag 'agriculture.png' %></li>
+  <li><%= image_tag 'coast.png' %></li>
+  <li><%= image_tag 'health.png' %></li>
+  <li><%= image_tag 'city.png' %></li>
+  <li><%= image_tag 'disaster.png' %></li>
+  <li><%= image_tag 'water.png' %></li>
+  <li><%= image_tag 'biodiversity.png' %></li>
+  <li><%= image_tag 'blueapcall.png' %></li>
 </ul>
 </div>
+-->
 
 <h2 style = "width: 70%;
 margin: 5em auto;
 text-align: center;
 color: #333;
-font-size: 1.4em;
-line-height: 2em;">PlayBlueap e' un gioco sociale dove cittadini vengono premiati per azioni a favore della salute ambientale della citta'</h2>
+font-size: 1.6em; font-weight:bold;
+line-height: 2em; color:white;
+text-shadow: 1px 1px 2px black;">PlayBlueap e' un gioco sociale dove cittadini vengono premiati per azioni a favore della salute ambientale della citta'</h2>
 
 <div style = "width: 80%;
 margin: 0 auto; position:relative; height:24em;">
@@ -112,7 +52,6 @@ margin: 0 auto; position:relative; height:24em;">
   border-radius: 50%;
   position: relative;
   left: -25%;" %>
-
 </div>
 
 <%= javascript_tag do %>

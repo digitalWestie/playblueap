@@ -14,17 +14,19 @@
   <header style= "padding:0em 1%;">
     <%= image_tag 'blueap_logo.png', style: "margin: 1%; width: 66%; max-width: 380px;" %>
   </header>
-  <div style = "padding:1%;">
-    <%= yield %>
+  <div class="picture-background" style = "padding:1%;">
+    
+      <%= yield %>
+    
   </div>
 </div>
 
 <footer>
   <div class = "partners">
-      <%= link_to image_tag("life_logo.jpg"), main_app.badges_path %>
-      <%= link_to image_tag("bologna_logo.jpg"), main_app.actions_path %>
-      <%= link_to image_tag("arpa_logo.png"), main_app.actions_path %>
-      <%= link_to image_tag("kyoto_logo.png"), main_app.actions_path %>
+    <%= link_to image_tag("life_logo.jpg"), main_app.badges_path %>
+    <%= link_to image_tag("bologna_logo.jpg"), main_app.actions_path %>
+    <%= link_to image_tag("arpa_logo.png"), main_app.actions_path %>
+    <%= link_to image_tag("kyoto_logo.png"), main_app.actions_path %>
   </div>
 </footer>
 
