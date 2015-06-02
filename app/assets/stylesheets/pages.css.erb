@@ -14,13 +14,13 @@ h2 {}
   text-shadow: 1px 1px 2px black; 
 }
 
-#water-icon { position:absolute; display:block; top:5%; right:12%; }
+#water-icon { position:absolute; display:block; top:5%; right:12%; width:40px; }
 #food-icon {  position:absolute; display:block; top:40%; right:10%; width:55px; }
 #infra-icon { position:absolute; display:block; top:30%; left:8%; }
 #tree-icon {  position:absolute; display:block; bottom:30%; left:20%; }
 #big-icon { position:absolute; display:block; bottom:-1%; right:22%; }
 #bubble-tweet { 
-  position: absolute; display:block; bottom:-1%; right:22%;
+  position: absolute; display:block; bottom:-1%; right:16%;
   background-image: url('<%= asset_path("icon_bigger.png") %>'); width: 311px; height:395px; 
   background-image-size: cover;
 }
@@ -45,12 +45,15 @@ h2 {}
 
 @media (max-width: 400px) {
   #intro-header { font-size: 1.2em; margin-top: 6em; }
+  #water-icon { right:43%; }
   #food-icon { top:43%; }
-  #bubble-tweet { right:3%; width:270px; }
+  #infra-icon { display:none; }
+  #bubble-tweet { right: 1%; width: 228px; height: 290px; background-size: 228px; }
+  #bubble-tweet span { font-size:1.1em; }
   #tree-icon { bottom: 10%; left: 10%; }
 }
   
-ul.badge_set { display:block; margin:0 auto;   }
+ul.badge_set { display:block; margin:0 auto; }
 ul.badge_set li { display:inline-block; margin:0.5em; text-align: center; }
 img#blueap_logo, ul.badge_set li img { -moz-opacity: 0.50;
   -khtml-opacity: 0.50;

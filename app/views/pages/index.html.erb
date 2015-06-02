@@ -27,8 +27,8 @@
 <%= image_tag 'icon_tree.png',  id: "tree-icon"  %>
 <%#= image_tag 'icon_bigger.png', id: "big-icon" %>
 <div id = "bubble-tweet">
-  <% pushdown = 75-(@tweet.length/140.0*75); pushdown = 0 if pushdown < 0; %>
-  <%= content_tag :span, @tweet, style: "padding-top: #{pushdown}px;" %>
+  <% pushdown = 2.5-(@tweet.length/140.0*2.5); pushdown = 0 if pushdown < 0; %>
+  <%= content_tag :span, @tweet, style: "padding-top: #{pushdown}em;" %>
 </div>
 
 <!-- <div style = "width: 80%;
