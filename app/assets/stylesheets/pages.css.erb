@@ -19,10 +19,26 @@ h2 {}
 #infra-icon { position:absolute; display:block; top:30%; left:8%; }
 #tree-icon {  position:absolute; display:block; bottom:30%; left:20%; }
 #big-icon { position:absolute; display:block; bottom:-1%; right:22%; }
+#bubble-tweet { 
+  position: absolute; display:block; bottom:-1%; right:22%;
+  background-image: url('<%= asset_path("icon_bigger.png") %>'); width: 311px; height:395px; 
+  background-image-size: cover;
+}
+#bubble-tweet span { 
+  display: block;
+  height: 48%;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 19%;
+  font-size: 1.4em;
+  color:white;
+  overflow: hidden;
+}
 
 @media (max-width: 650px) {
   #intro-header { font-size: 1.4em; margin-top:4em; }
-  #big-icon { right:8%; width:290px; }
+  #bubble-tweet { right:8%; }
   #infra-icon { left:3%; }
   #food-icon {  right:6%; }
 }
@@ -30,7 +46,7 @@ h2 {}
 @media (max-width: 400px) {
   #intro-header { font-size: 1.2em; margin-top: 6em; }
   #food-icon { top:43%; }
-  #big-icon { right:3%; width:270px; }
+  #bubble-tweet { right:3%; width:270px; }
   #tree-icon { bottom: 10%; left: 10%; }
 }
   

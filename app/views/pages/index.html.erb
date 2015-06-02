@@ -25,7 +25,11 @@
 <%= image_tag 'icon_food.png',  id: "food-icon"  %>
 <%= image_tag 'icon_infra.png', id: "infra-icon" %>
 <%= image_tag 'icon_tree.png',  id: "tree-icon"  %>
-<%= image_tag 'icon_bigger.png',   id: "big-icon"   %>
+<%#= image_tag 'icon_bigger.png', id: "big-icon" %>
+<div id = "bubble-tweet">
+  <% pushdown = 75-(@tweet.length/140.0*75); pushdown = 0 if pushdown < 0; %>
+  <%= content_tag :span, @tweet, style: "padding-top: #{pushdown}px;" %>
+</div>
 
 <!-- <div style = "width: 80%;
 margin: 0 auto; position:relative; height:24em;">
