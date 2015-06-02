@@ -2,6 +2,7 @@
 <style type="text/css">
 </style>
 <% end %>
+<div class="picture-background" style = "">
 
 <!--
 <div style = "margin:0 auto; width:66%;">
@@ -25,42 +26,29 @@
 <%= image_tag 'icon_food.png',  id: "food-icon"  %>
 <%= image_tag 'icon_infra.png', id: "infra-icon" %>
 <%= image_tag 'icon_tree.png',  id: "tree-icon"  %>
-<%#= image_tag 'icon_bigger.png', id: "big-icon" %>
+
 <div id = "bubble-tweet">
   <% pushdown = 2.5-(@tweet.length/140.0*2.5); pushdown = 0 if pushdown < 0; %>
   <%= content_tag :span, @tweet, style: "padding-top: #{pushdown}em;" %>
 </div>
 
-<!-- <div style = "width: 80%;
-margin: 0 auto; position:relative; height:24em;">
-
-  <div class = "bubble">
-    <h3><%= @tweet %></h3>
-    <div class = "bubble_links">
+<!-- 
+    
     <%= link_to "Azioni gia' completate", actions_path, :class => "ontwitter" %> | 
     <%= link_to 'http://twitter.com/playblueap', :target => '_blank', :class => "ontwitter" do %>
       PlayBlueAp Twitter <%= image_tag('tw.png') %>
     <% end %>
-    </div>
-  </div>
-
+    
   <div class = "response bubble" style = "">
     <%= text_area_tag :response, "@playblueap", :id => "response_text" %>
     <a href="https://twitter.com/intent/tweet?screen_name=playblueap" target="_blank" id="respond_link">Rispondi</a>
-    
   </div>
 
-  <%= image_tag 'bologna_piazza.jpg', :style => "width: 60%;
-  display: block;
-  margin: 0 auto;
-  border-radius: 50%;
-  position: relative;
-  left: -25%;" %>
+<%= image_tag 'instruction.png', :style => "width:90%; display:block; margin:0 auto;" %>-->
+
 </div>
---> 
 
-
-<%= javascript_tag do %>
+<% content_for :javascript_footer do %>
   
   $("a#respond_link").click(function(){
     var turl = "https://twitter.com/intent/tweet?text=" + $('#response_text').val();
@@ -69,8 +57,3 @@ margin: 0 auto; position:relative; height:24em;">
   });
 
 <% end %>
-
-<!--
-<br/>
-
-<%= image_tag 'instruction.png', :style => "width:90%; display:block; margin:0 auto;" %>-->
