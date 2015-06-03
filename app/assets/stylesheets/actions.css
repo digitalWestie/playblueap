@@ -36,8 +36,9 @@
 }
 .profile_circle img {  } 
 
-ul.badge_tabs { float:left; width:20%; padding: 0% 1%; }
-ul.badge_tabs li { margin-bottom: 5px; }
+ul.category_tabs { }
+ul.category_tabs li button { width:100%; }
+
 ul.badge_tabs button { text-align: left; height: 3.5em; background-color: transparent; width:95%; padding:2%; border:none; border-radius: 3px; font-size:1em; text-align: middle;} 
 ul.badge_tabs button span { top: 16px; display: block; font-size: 0.9em; line-height: 0.9em; position: relative; } 
 ul.badge_tabs button:hover { cursor:pointer; }
