@@ -1,0 +1,9 @@
+<div class="card">
+  <div class = "profile_circle"><%= image_tag action.player.avatar_url, alt: "" %></div>
+  <% has_image = !(action.photo_url.blank?) %> 
+  <%= link_to(image_tag(action.photo_url, class: "tweet_image"), action.photo_url, :target => "_blank") if has_image %>
+  <%= link_to "@#{action.player.screen_name}", action.status_url, class: "username" %> - 
+  <% reduce = "font-size:1em;" if action_text(action).length > 70 %>
+  <% tweet_text = has_image ? truncate(action_text(action), length: 70) : action_text(action) %> 
+  <%= content_tag :span, tweet_text, style: reduce %>
+</div>

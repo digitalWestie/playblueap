@@ -12,6 +12,10 @@ class Action < ActiveRecord::Base
     "disaster" => "Disaster Risk Reduction",
     "blueapcall" => "BlueApCall" }
   
+  def status_url
+    "https://twitter.com/#{screen_name}/status/#{tweet_id}"
+  end
+
   def self.accepted
     where(:is_accepted => true).where("moderated_at IS NOT NULL")
   end

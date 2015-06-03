@@ -3,68 +3,60 @@
 </style>
 <% end %>
 <div class="picture-background" style = "">
+  <h2 id="intro-header">PlayBlueap e' un gioco sociale dove cittadini vengono premiati per azioni a favore della salute ambientale della citta'</h2>
 
-<!--
-<div style = "margin:0 auto; width:66%;">
-<ul class = "badge_set">
-  <li><%= image_tag 'all.png' %></li>
-  <li><%= image_tag 'agriculture.png' %></li>
-  <li><%= image_tag 'coast.png' %></li>
-  <li><%= image_tag 'health.png' %></li>
-  <li><%= image_tag 'city.png' %></li>
-  <li><%= image_tag 'disaster.png' %></li>
-  <li><%= image_tag 'water.png' %></li>
-  <li><%= image_tag 'biodiversity.png' %></li>
-  <li><%= image_tag 'blueapcall.png' %></li>
-</ul>
-</div>
--->
+  <%= image_tag 'icon_water.png', id: "water-icon" %>
+  <%= image_tag 'icon_food.png',  id: "food-icon"  %>
+  <%= image_tag 'icon_infra.png', id: "infra-icon" %>
+  <%= image_tag 'icon_tree.png',  id: "tree-icon"  %>
 
-<h2 id="intro-header">PlayBlueap e' un gioco sociale dove cittadini vengono premiati per azioni a favore della salute ambientale della citta'</h2>
-
-<%= image_tag 'icon_water.png', id: "water-icon" %>
-<%= image_tag 'icon_food.png',  id: "food-icon"  %>
-<%= image_tag 'icon_infra.png', id: "infra-icon" %>
-<%= image_tag 'icon_tree.png',  id: "tree-icon"  %>
-
-<div id = "bubble-tweet">
-  <% pushdown = 2.5-(@tweet.length/140.0*2.5); pushdown = 0 if pushdown < 0; %>
-  <%= content_tag :span, @tweet, style: "padding-top: #{pushdown}em;" %>
-</div>
-
-<!-- 
-    
-    <%= link_to "Azioni gia' completate", actions_path, :class => "ontwitter" %> | 
-    <%= link_to 'http://twitter.com/playblueap', :target => '_blank', :class => "ontwitter" do %>
-      PlayBlueAp Twitter <%= image_tag('tw.png') %>
-    <% end %>
-    
-  <div class = "response bubble" style = "">
-    <%= text_area_tag :response, "@playblueap", :id => "response_text" %>
-    <a href="https://twitter.com/intent/tweet?screen_name=playblueap" target="_blank" id="respond_link">Rispondi</a>
+  <div id = "bubble-tweet">
+    <% pushdown = 2.5-(@tweet.length/140.0*2.5); pushdown = 0 if pushdown < 0; %>
+    <%= content_tag :span, style: "padding-top: #{pushdown}em;" do %>
+      <%= @tweet%>
+      <%= link_to image_tag('tw.png'), 'http://twitter.com/playblueap', style: "margin-left:0.3em;", 
+      :target => '_blank', :class => "ontwitter" %>
+    <%end%>
   </div>
-
-<%= image_tag 'instruction.png', :style => "width:90%; display:block; margin:0 auto;" %>-->
-
 </div>
 
 <div style = "background-color:white; padding-top:1em;">
-  <% action = 1 %>
-  <ul>
-  <% 30.times do %>
-    <%= content_tag :li, " #{action} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas" %>
-    <% action += 1%>
-  <% end %>
-</ul>
-</div>
 
+  <div class="wide row">
+    <div class="large-offset-8 medium-offset-6 medium-6 large-4 columns">
+      <%= link_to 'https://twitter.com/intent/tweet?screen_name=playblueap', target:"_blank", id: "answer" do %>
+        <span>RACCONTACI LA TUA AZIONE</span>
+      <% end %>
+    </div>
+  </div>
+  <br/>
+  <div class="wide row">
+    <div class="medium-6 large-4 columns">
+      <h3 style = "text-indent:3%; font-size:3em;">Ultime risposte</h3>
+    </div>
+  </div>
+  <br/>
+  
+  <% @actions.each_slice(3) do |slice| %>
+    <div class="wide row">
+      <% slice.each do |action| -%>
+        <div class="medium-6 large-4 columns">
+          <%= render 'actions/tweet_card', action: action %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>   
+
+<div style = "background-color:silver; padding-top:1em;">
+</div>
 
 <% content_for :javascript_footer do %>
   
-  $("a#respond_link").click(function(){
+  /*$("a#answer").click(function(){
     var turl = "https://twitter.com/intent/tweet?text=" + $('#response_text').val();
     $(this).attr('href', turl);
     return true
-  });
+  });*/
 
 <% end %>
