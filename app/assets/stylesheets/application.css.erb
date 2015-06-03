@@ -14,9 +14,15 @@
  *= require_tree .
  */
 
-.wide.row {
+.contain-to-grid .wide.top-bar,.wide.row {
   max-width: 98%;
 }
+.contain-to-grid .wide.top-bar a { text-decoration: none; }
+.columns + .badge.columns:last-child {
+  float:left;
+}
+
+a { color: #23ACDC;}
 
 body {
   font-size: 20px;

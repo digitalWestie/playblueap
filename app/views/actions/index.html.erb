@@ -6,17 +6,17 @@
 <% end %>
 
 <div class="contain-to-grid sticky">
-<nav class="top-bar" data-topbar role="navigation" data-options="sticky_on">
+  <nav class="wide top-bar" data-topbar role="navigation" data-options="sticky_on: large">
   <ul class="title-area">
     <li class="name">
-      <h1><a href="#">My Site</a></h1>
+      <h1><a href="#">Classifiche: </a></h1>
     </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
   </ul>
 
   <section class="top-bar-section">
-    <!-- Right Nav Section -->
+    <!-- Right Nav Section
     <ul class="right">
       <li class="active"><a href="#">Right Button Active</a></li>
       <li class="has-dropdown">
@@ -26,17 +26,22 @@
           <li class="active"><a href="#">Active link in dropdown</a></li>
         </ul>
       </li>
-    </ul>
+    </ul>  -->
 
     <!-- Left Nav Section -->
     <ul class="left">
-      <li><a href="#">Left Nav Button</a></li>
+      <li class="active"><a href="#" data-target = ".badge">&#35;All</a></li>
+      <% Action::CATEGORIES.each do |hashtag, name| %>
+        <li><a data-target = ".<%= hashtag %>"><%= name %></a></li>
+      <% end %>
     </ul>
+
+
   </section>
 </nav>
 </div>
 
-<div style = "background-color:white;"> 
+<div style = "background-color:white; height:900px;"> 
 
   <div class = "wide row">
     <div class = "small-12 columns">
@@ -66,7 +71,7 @@
   <div class="wide row">
     <% for action in @actions %>
       <% standard  = Action::CATEGORIES.keys.include?(action.hashtag) ? "standard" : "nonstandard" %>
-      <div class="medium-6 large-4 columns <%= action.hashtag %> <%= standard %>">
+      <div class="medium-6 large-4 columns badge <%= action.hashtag %> <%= standard %>">
         <%= render 'actions/tweet_card', action: action %>
       </div>
     <% end %>
@@ -83,8 +88,9 @@
     </div>
 
     <% Action::CATEGORIES.each do |hashtag, name| %>
+      <% next if hashtag.eql?('blueapcall') %>
       <div class = "<%= hashtag %> hidden info_embed badge">
-      <%= render "#{hashtag}_info" rescue "No info" %>
+        <%= render "#{hashtag}_info" rescue "No info" %>
       </div>
     <% end %>
   </div>
@@ -103,19 +109,20 @@
     $(tar).show();
   });
 
-  $('ul.badge_tabs li button').click(function(e){ 
-    $('li.badge').hide();
+  $('nav ul.left li a').click(function(e){ 
+    $('div.badge').hide();
     $('div.info_embed').hide();
 
-    $('ul.badge_tabs li button').removeClass('active');
-    $(this).addClass('active');
+    $('nav ul.left li').removeClass('active');
+    $(this).parent().addClass('active');
     
     var t = $(this).attr('data-target');
-
-    if (t == ".blueapcall"){ console.log("call"); $('li.badge.nonstandard').show();  }
     
-    $('li'+t).show();
+    if (t == ".blueapcall"){ $('div.badge.nonstandard').show(); }
+    $('div'+t).show();
+    
     if (t == ".badge"){ $('div#blueap_intro').show(); } else { $('div.info_embed'+t).show(); }
-    
   });
+
+  $(document).foundation();
 <% end %>
