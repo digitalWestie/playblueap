@@ -32,7 +32,7 @@
     <ul class="left">
       <li class="active"><a href="#" data-target = ".badge">&#35;All</a></li>
       <% Action::CATEGORIES.each do |hashtag, name| %>
-        <li><a data-target = ".<%= hashtag %>"><%= name %></a></li>
+        <li><a data-target = ".<%= hashtag %>">&#35;<%= hashtag %></a></li>
       <% end %>
     </ul>
 
@@ -41,34 +41,20 @@
 </nav>
 </div>
 
-<div style = "background-color:white; height:900px;"> 
-
+<div class = "trans_background"> 
+  <br/>
   <div class = "wide row">
-    <div class = "small-12 columns">
-    <h1>
+    <div class = "large-4 medium-6 small-12 columns">
+    <h1 style = "background-color: #FFF; padding: 3% 0em; text-align: left; border-radius: 5px; text-indent: 3%;">
       <%= link_to 'Azioni', '#', :class => "active ai_switch", 
-        :data => { :target => "#badge_list" } %> / 
+        :data => { :target => "#action_list" } %> / 
       <%= link_to 'Info.', '#', :data => { :target => "#info_embed" }, 
       :class => "ai_switch" %>
     </h1>
     </div>
   </div>
-<!--
-  <ul class = "wide row category_tabs">
-    <li class = "medium-4 large-1 columns">
-      <button class = "active" data-target = ".badge"><%= image_tag 'all.png' %><span>All</span></button>
-    </li>  
-    
-    <% last_k = Action::CATEGORIES.keys.last %>
-    <% Action::CATEGORIES.each do |hashtag, name| %>
-      <% end_class = last_k.eql?(hashtag) ? "end" : ""  %>
-      <li class = "medium-2 large-1 columns <%=end_class%>">
-        <button data-target = ".<%= hashtag %>"><%= image_tag "#{hashtag}.png" %><span><%= name %></span></button>
-      </li>
-    <% end %>
-  </ul>
-  -->
-  <div class="wide row">
+  <br/>
+  <div class="wide row" id = "action_list">
     <% for action in @actions %>
       <% standard  = Action::CATEGORIES.keys.include?(action.hashtag) ? "standard" : "nonstandard" %>
       <div class="medium-6 large-4 columns badge <%= action.hashtag %> <%= standard %>">
@@ -77,14 +63,17 @@
     <% end %>
   </div>
 
-  <div class = "information hidden" id = "info_embed" >
+  <div class = "information hidden wide row" id = "info_embed" >
     <div class = "info_embed badge " id = "blueap_intro">
       
-      <p><%= link_to "Il Progetto BLUE AP", "http://www.blueap.eu/site/il-progetto/", :target=> "_blank" %>, nasce con l’obiettivo di dotare la città di Bologna di un piano di adattamento al cambiamento climatico, che preveda anche la sperimentazione di alcune misure concrete da attuare a livello locale, per rendere la città meno vulnerabile e in grado di agire in caso di alluvioni, siccità e altre conseguenze del mutamento del clima.</p>
+    
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt egestas diam ac lacinia. Fusce varius, lacus sed fermentum efficitur, purus magna tincidunt sapien, feugiat blandit turpis mi sit amet libero. Aenean eu sagittis metus, nec aliquam lorem. Morbi varius nisl non purus sagittis posuere. Cras quis tortor vitae. </p>
 
-      <canvas style = "width:100%;" id = "brochure_canvas"></canvas>
+      <%= image_tag 'bologna_piazza.jpg', style: "width:40%; float:left; margin:1em; " %>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt egestas diam ac lacinia. Fusce varius, lacus sed fermentum efficitur, purus magna tincidunt sapien, feugiat blandit turpis mi sit amet libero. Aenean eu sagittis metus, nec aliquam lorem. Morbi varius nisl non purus sagittis posuere. Cras quis tortor vitae. </p>
 
-      <%= image_tag 'bologna_piazza.jpg' %>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt egestas diam ac lacinia. Fusce varius, lacus sed fermentum efficitur, purus magna tincidunt sapien, feugiat blandit turpis mi sit amet libero. Aenean eu sagittis metus, nec aliquam lorem. Morbi varius nisl non purus sagittis posuere. Cras quis tortor vitae. </p>
+      
     </div>
 
     <% Action::CATEGORIES.each do |hashtag, name| %>
@@ -103,7 +92,7 @@
     $('a.ai_switch').removeClass('active');
     $(this).addClass('active');
 
-    $('#badge_list').hide();
+    $('#action_list').hide();
     $('#info_embed').hide();
     var tar = $(this).attr('data-target');
     $(tar).show();
@@ -118,9 +107,9 @@
     
     var t = $(this).attr('data-target');
     
-    if (t == ".blueapcall"){ $('div.badge.nonstandard').show(); }
+    if (t == ".blueapcall"){ $('div.badge.nonstandard').show(); } 
     $('div'+t).show();
-    
+
     if (t == ".badge"){ $('div#blueap_intro').show(); } else { $('div.info_embed'+t).show(); }
   });
 
