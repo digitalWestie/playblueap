@@ -37,15 +37,28 @@
   </div>
   <br/>
   
-  <% @actions.each_slice(3) do |slice| %>
-    <div class="wide row">
-      <% slice.each do |action| -%>
+  <% @actions << "classifica" %>  
+  <div class="wide row">
+    <% @actions.each do |action| -%>
+      <% if action.eql? "classifica"%>
+
+        <div class="medium-6 large-4 columns">
+          <div class = "card">
+          <%= link_to actions_path, id: "classifica" do %>
+            <span>Classifica...</span>
+          <% end %>
+          </div>
+        </div>
+
+      <% else %>
         <div class="medium-6 large-4 columns">
           <%= render 'actions/tweet_card', action: action %>
         </div>
       <% end %>
-    </div>
-  <% end %>
+
+    <% end %>
+  </div>
+
 </div>   
 
 <div style = "background-color:silver; padding-top:1em;">
