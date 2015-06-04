@@ -14,9 +14,9 @@
   <header style= "padding:0em 1%;">
     <%= link_to image_tag('blueap_logo.png', style: "margin: 1%; width: 66%; max-width: 380px;"), root_path %>
   </header>  
-  <% is_admin = ["devise", "admin"].include? controller_path.split('/').first %>
+  <% is_admin = ["refinery", "admin_badges", "moderate_actions", "devise", "admin"].include? controller_path.split('/').first %>
   <% klass = is_admin ? "admin" : "" %>
-  <%= controller_path %>
+  <%#= controller_path %>
   <div class = "<%= klass %>">
     <%= yield %>
   </div>

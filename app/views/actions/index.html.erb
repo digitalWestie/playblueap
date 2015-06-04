@@ -16,17 +16,17 @@
   </ul>
 
   <section class="top-bar-section">
-    <!-- Right Nav Section
+    
     <ul class="right">
-      <li class="active"><a href="#">Right Button Active</a></li>
       <li class="has-dropdown">
-        <a href="#">Right Button Dropdown</a>
+        <a href="#">Menu</a>
         <ul class="dropdown">
-          <li><a href="#">First link in dropdown</a></li>
-          <li class="active"><a href="#">Active link in dropdown</a></li>
+          <% for page in @pages %>
+            <li><%= link_to page.title, page.slug %></li>
+          <% end %>
         </ul>
       </li>
-    </ul>  -->
+    </ul>
 
     <!-- Left Nav Section -->
     <ul class="left">
@@ -65,21 +65,11 @@
 
   <div class = "information hidden wide row" id = "info_embed" >
     <div class = "info_embed badge " id = "blueap_intro">
-      
-    
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt egestas diam ac lacinia. Fusce varius, lacus sed fermentum efficitur, purus magna tincidunt sapien, feugiat blandit turpis mi sit amet libero. Aenean eu sagittis metus, nec aliquam lorem. Morbi varius nisl non purus sagittis posuere. Cras quis tortor vitae. </p>
-
-      <%= image_tag 'bologna_piazza.jpg', style: "width:40%; float:left; margin:1em; " %>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt egestas diam ac lacinia. Fusce varius, lacus sed fermentum efficitur, purus magna tincidunt sapien, feugiat blandit turpis mi sit amet libero. Aenean eu sagittis metus, nec aliquam lorem. Morbi varius nisl non purus sagittis posuere. Cras quis tortor vitae. </p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt egestas diam ac lacinia. Fusce varius, lacus sed fermentum efficitur, purus magna tincidunt sapien, feugiat blandit turpis mi sit amet libero. Aenean eu sagittis metus, nec aliquam lorem. Morbi varius nisl non purus sagittis posuere. Cras quis tortor vitae. </p>
-      
+      <%= raw(@page.content_for(:all)) %>    
     </div>
-
     <% Action::CATEGORIES.each do |hashtag, name| %>
-      <% next if hashtag.eql?('blueapcall') %>
       <div class = "<%= hashtag %> hidden info_embed badge">
-        <%= render "#{hashtag}_info" rescue "No info" %>
+        <%= raw(@page.content_for(hashtag)) %> 
       </div>
     <% end %>
   </div>
