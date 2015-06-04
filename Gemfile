@@ -38,6 +38,7 @@ gem 'refinerycms-images', '~> 2.1.2'
 gem 'refinerycms-pages', '~> 2.1.2'
 gem 'refinerycms-resources', '2.1.2'
 
+gem 'rails_12factor'
 #gem 'oauth'
 #gem 'oauth2'
 #gem 'refinerycms', '~> 2.1.2'
