@@ -33,7 +33,11 @@
     <%= link_to image_tag("kyoto_logo.png"), main_app.actions_path %>
   </div>
   <div style = "margin-top:2em; background-color:#EEE; color:white; padding:1em; text-align:center;">
-    <%= link_to 'Admin', '#' %>
+    <% if current_user %>
+      <%= link_to 'Admin', admin_path %>
+    <% else %>
+      <%= link_to 'Admin', new_user_session_path %>
+      <% end %>
   </div>
 </footer>
 
