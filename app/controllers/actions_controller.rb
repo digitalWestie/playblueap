@@ -6,8 +6,6 @@ class ActionsController < ApplicationController
     end
     @actions = Action.accepted.order('tweet_id DESC').limit(60).all
     @page = Refinery::Page.find_by_slug("hashtags")
-    @pages = Refinery::Page.all
-    @pages.delete_if { |p| ["Home", "hashtags", "Page not found"].include? p.title } 
   end
 
   def totals

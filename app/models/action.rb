@@ -40,7 +40,13 @@ class Action < ActiveRecord::Base
     tweet_id = 1
     tweet_id = latest_tweet.tweet_id unless latest_tweet.try(:tweet_id).blank?
     
-    results = TWITTER.mentions_timeline(:since_id => tweet_id)
+    begin
+      results = TWITTER.mentions_timeline(:since_id => tweet_id)
+    rescue Twitter::Error::TooManyRequests => e
+      Rails.logger.info e.message
+      results = []
+    end
+    
     results.each do |tweet|
       if Action.is_tweet_valid?(tweet)
         u = Player.find_or_create_by_twitter_id(tweet.attrs[:user][:id], 

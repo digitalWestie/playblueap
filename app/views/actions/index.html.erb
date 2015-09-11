@@ -5,42 +5,6 @@
   <%= javascript_include_tag "load_pdfs.js" %>
 <% end %>
 
-<div class="contain-to-grid sticky">
-  <nav class="wide top-bar" data-topbar role="navigation" data-options="sticky_on: large">
-  <ul class="title-area">
-    <li class="name">
-      <h1><a href="#">Classifiche: </a></h1>
-    </li>
-     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
-
-  <section class="top-bar-section">
-    
-    <ul class="right">
-      <li class="has-dropdown">
-        <a href="#">Menu</a>
-        <ul class="dropdown">
-          <% for page in @pages %>
-            <li><%= link_to page.title, page.slug %></li>
-          <% end %>
-        </ul>
-      </li>
-    </ul>
-
-    <!-- Left Nav Section -->
-    <ul class="left">
-      <li class="active"><a href="#" data-target = ".badge">&#35;All</a></li>
-      <% Action::CATEGORIES.each do |hashtag, name| %>
-        <li><a data-target = ".<%= hashtag %>">&#35;<%= hashtag %></a></li>
-      <% end %>
-    </ul>
-
-
-  </section>
-</nav>
-</div>
-
 <div class = "trans_background"> 
   <br/>
   <div class = "wide row">
@@ -103,8 +67,44 @@
     if (t == ".badge"){ $('div#blueap_intro').show(); } else { $('div.info_embed'+t).show(); }
   });
 
-  $(document).ready(function(){
+  var selectByHash = function(){
+    $('div.badge').hide();
+    $('div.info_embed').hide();
+    $('nav ul.left li').removeClass('active');
 
+    if(window.location.hash) {
+      var t = window.location.hash;
+    } else {
+      var t = ".badge";
+    }
+    
+    var actif = 'nav ul.left li' + t;
+    console.log(actif);
+
+    //$('nav ul.left li' + t).parent().addClass('active');
+
+    $('nav ul.left li').removeClass('active');
+    $(this).parent().addClass('active');
+
+    if (t == ".blueapcall"){ $('div.badge.nonstandard').show(); } 
+    $('div'+t).show();
+    if (t == ".badge"){ $('div#blueap_intro').show(); } else { $('div.info_embed'+t).show(); }
+  };
+
+  var selectByHash = function(){
+    if(window.location.hash) {
+      var t = window.location.hash;
+      t = t.replace('#', '');
+    } else {
+      var t = "all";
+    }
+    var actif = 'nav ul.left li.sel-' + t + ' a';
+    console.log(actif);
+    $(actif).click();
+  };
+
+  $(document).ready(function(){
+    selectByHash();
   });
   $(document).foundation();
 <% end %>

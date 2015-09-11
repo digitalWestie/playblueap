@@ -13,14 +13,55 @@
 <div class ="page_wrap">
   <header style= "padding:0em 1%;">
     <%= link_to image_tag('blueap_logo.png', style: "margin: 1%; width: 66%; max-width: 380px;"), root_path %>
-    <%= link_to image_tag("life_logo.jpg"), "http://ec.europa.eu/environment/life/", style: "float:right; margin:1%;" %>
-  </header>  
+    <%= link_to image_tag("life_logo.jpg"), "http://ec.europa.eu/environment/life/", class: "life_logo", style: "float:right; margin:1%;" %>
+  </header>
+
   <% is_admin = ["refinery", "admin_badges", "moderate_actions", "devise", "admin"].include? controller_path.split('/').first %>
   <% klass = is_admin ? "admin" : "" %>
+  <% unless is_admin %>
+        
+    <div class="contain-to-grid sticky">
+    <nav class="wide top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#">Classifiche: </a></h1>
+        </li>
+         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        
+        <ul class="right">
+          <li class="has-dropdown">
+            <a href="#">Menu</a>
+            <ul class="dropdown">
+              <% for page in @pages %>
+                <li><%= link_to page.title, page.slug %></li>
+              <% end %>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+          <li class="sel-all active"><a href="#" data-target = ".badge">&#35;All</a></li>
+          <% Action::CATEGORIES.each do |hashtag, name| %>
+            <li class="sel-<%= hashtag %>" ><%= link_to "##{hashtag}", main_app.actions_path(anchor: hashtag), data: { target: ".#{hashtag}" } %></li>
+          <% end %>
+        </ul>
+
+
+      </section>
+    </nav>
+    </div>
+  <% end %>
+
   <%#= controller_path %>
   <div class = "<%= klass %>">
     <%= yield %>
   </div>
+
 </div>
 
 <div style = "background-color:#EEE; padding-top:1em;">
@@ -38,8 +79,8 @@
     <% if current_user %>
       <%= link_to 'Admin', admin_path %>
     <% else %>
-      <%= link_to 'Admin', new_user_session_path %>
-      <% end %>
+      <%= link_to 'Admin', main_app.new_user_session_path %>
+    <% end %>
   </div>
 </footer>
 
