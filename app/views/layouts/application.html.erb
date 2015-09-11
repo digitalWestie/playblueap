@@ -13,6 +13,7 @@
 <div class ="page_wrap">
   <header style= "padding:0em 1%;">
     <%= link_to image_tag('blueap_logo.png', style: "margin: 1%; width: 66%; max-width: 380px;"), root_path %>
+    <%= link_to image_tag("life_logo.jpg"), "http://ec.europa.eu/environment/life/", style: "float:right; margin:1%;" %>
   </header>  
   <% is_admin = ["refinery", "admin_badges", "moderate_actions", "devise", "admin"].include? controller_path.split('/').first %>
   <% klass = is_admin ? "admin" : "" %>
@@ -27,10 +28,11 @@
 
 <footer>
   <div class = "partners">
-    <%= link_to image_tag("life_logo.jpg"), main_app.badges_path %>
-    <%= link_to image_tag("bologna_logo.jpg"), main_app.actions_path %>
-    <%= link_to image_tag("arpa_logo.png"), main_app.actions_path %>
-    <%= link_to image_tag("kyoto_logo.png"), main_app.actions_path %>
+    <%= link_to image_tag("bologna_logo.png"), "http://www.comune.bologna.it/" %>
+    <%= link_to image_tag("sust_logo.png"), "http://www.comune.bologna.it/" %>
+    <%= link_to image_tag("ambiente_logo.jpg", style: "height:40px;"), "http://www.ambienteitalia.it/" %>
+    <%= link_to image_tag("arpa_logo.png"), "http://www.arpa.emr.it/" %>
+    <%= link_to image_tag("kyoto_logo.png"), "http://www.kyotoclub.org/" %>
   </div>
   <div style = "margin-top:2em; background-color:#EEE; color:white; padding:1em; text-align:center;">
     <% if current_user %>
