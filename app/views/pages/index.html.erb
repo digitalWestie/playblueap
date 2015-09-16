@@ -10,12 +10,18 @@
   <%= image_tag 'icon_infra.png', id: "infra-icon" %>
   <%= image_tag 'icon_tree.png',  id: "tree-icon"  %>
 
+   <div class = "response bubble" style = "">
+    <h3><%= image_tag 'tw.png', style:"padding-left:1%;" %> Che c'è di nuovo?</h3>
+    <%= text_area_tag :response, "@playblueap", :id => "response_text" %>
+    <a href="#" target="blank" id="respond_link">Rispondi</a>
+  </div>
+
   <div id = "bubble-tweet">
     <% pushdown = 2.5-(@tweet.length/140.0*2.5); pushdown = 0 if pushdown < 0; %>
     <%= content_tag :span, style: "padding-top: #{pushdown}em;" do %>
       <%= @tweet%>
       <%= link_to image_tag('tw.png'), 'http://twitter.com/playblueap', style: "margin-left:0.3em;", 
-      :target => '_blank', :class => "ontwitter" %>
+      :target => '_blank', :class => "ontwitter btn btn-info" %>
     <%end%>
   </div>
 </div>
@@ -62,11 +68,12 @@
 </div>   
 
 <% content_for :javascript_footer do %>
-  
-  /*$("a#answer").click(function(){
-    var turl = "https://twitter.com/intent/tweet?text=" + $('#response_text').val();
-    $(this).attr('href', turl);
-    return true
-  });*/
-
+  $(document).ready(function(){
+    $("a#respond_link").click(function(){
+      console.log('arse');
+      var turl = "https://twitter.com/intent/tweet?text=" + $('#response_text').val();
+      $(this).attr('href', turl);
+      return true;
+    });
+  });
 <% end %>
