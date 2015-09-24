@@ -53,7 +53,7 @@ PDFJS.getDocument('assets/profilo.pdf').then(function(pdf) {
     var viewport = page.getViewport(scale);
 
     // Prepare canvas using PDF page dimensions
-    var canvas = document.getElementById('coast_canvas');
+    var canvas = document.getElementById('resilienza_canvas');
     var context = canvas.getContext('2d');
     canvas.height = viewport.height;
     canvas.width = viewport.width;

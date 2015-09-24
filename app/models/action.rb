@@ -6,7 +6,7 @@ class Action < ActiveRecord::Base
   CATEGORIES = {"agriculture" => "Agriculture and Forests", 
     "health" => "Health", 
     "city" => "City Planning and Buildings",
-    "coast" => "Coastal Areas",
+    "resilienza" => "Resilience",
     "biodiversity" => "Biodiversity and Nature",
     "water" => "Water Management",
     "disaster" => "Disaster Risk Reduction",

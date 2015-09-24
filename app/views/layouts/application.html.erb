@@ -74,7 +74,12 @@
     <%= link_to image_tag("ambiente_logo.jpg", style: "height:40px;"), "http://www.ambienteitalia.it/" %>
     <%= link_to image_tag("arpa_logo.png"), "http://www.arpa.emr.it/" %>
     <%= link_to image_tag("kyoto_logo.png"), "http://www.kyotoclub.org/" %>
+    <p style="font-size:0.85em;"><%= link_to "BLUE AP", 'http://www.blueap.eu' %> (Bologna Local Urban Environment Adaptation Plan for a Resilient City) è un progetto LIFE+ (LIFE11 ENV/IT/119) per la realizzazione del Piano di Adattamento ai Cambiamenti Climatici per il Comune di Bologna <%= link_to 'continua a leggere', "http://www.blueap.eu/site/il-progetto/"%></p>
+
+    <p style="font-size:0.85em;"><%= link_to "BLUE AP", 'http://www.blueap.eu' %> (Bologna Local Urban Environment Adaptation Plan for a Resilient City) is a LIFE+ project for the implementation of an AdaptationPlan to Climate Change for the Municipality of Bologna <%= link_to 'read more', "http://www.blueap.eu/site/en/il-progetto/"%></p>
   </div>
+
+
   <div style = "margin-top:2em; background-color:#EEE; color:white; padding:1em; text-align:center;">
     <% if current_user %>
       <%= link_to 'Admin', admin_path %>
