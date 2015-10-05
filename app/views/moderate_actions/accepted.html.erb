@@ -3,7 +3,6 @@
 <h3>Moderate Accepted Tweets</h3>
 
 <%= form_tag moderate_actions_path, :class => "moderation", :method => :put do %>
-  <%= hidden_field_tag :reject_tweets, true %>
-  <%= render 'accept_table' %>
-  <%= submit_tag 'Accept' %>
+  <%= hidden_field :reject_tweets, true %>
+  <%= render 'reject_table' %>
 <% end %>
