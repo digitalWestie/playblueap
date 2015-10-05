@@ -24,10 +24,9 @@
         
     <div class="contain-to-grid sticky">
     <nav class="wide top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+      
       <ul class="title-area">
-        <li class="name">
-          <h1><a href="#">Classifiche: </a></h1>
-        </li>
+        <li class="name"></li>
          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
       </ul>
@@ -36,11 +35,9 @@
         
         <ul class="right">
           <li class="has-dropdown">
-            
-            <% unless @pages.empty? %> 
+            <% unless @pages.empty? %>
               <a href="#">Menu</a>
             <% end %>
-
             <ul class="dropdown">
               <% for page in @pages %>
                 <li><%= link_to page.title, page.slug %></li>
@@ -51,7 +48,9 @@
 
         <!-- Left Nav Section -->
         <ul class="left">
-          <li class="sel-all active"><a href="#" data-target = ".badge">All</a></li>
+          <li class = "active"><%= link_to "Home", root_path %></li>
+          <li style="color:#AAA; font-size: 0.8125rem; line-height: 2.8125rem; padding: 0px 0.5rem; padding-top: 2px;">Classifiche: </li>
+          <li class="sel-all"><a href="#" data-target = ".badge">All</a></li>
           <% Action::CATEGORIES.each do |hashtag, name| %>
             <li class="sel-<%= hashtag %>" ><%= link_to "##{hashtag}", main_app.actions_path(anchor: hashtag), data: { target: ".#{hashtag}" } %></li>
           <% end %>
