@@ -12,8 +12,10 @@
 
 <div class ="page_wrap">
   <header style= "padding:0em 1%;">
-    <%= link_to image_tag('blueap_logo.png', style: "margin: 1%; width: 66%; max-width: 380px;"), root_path %>
-    <%= link_to image_tag("life_logo.jpg"), "http://ec.europa.eu/environment/life/", class: "life_logo", style: "float:right; margin:1%;" %>
+    
+    <%= link_to image_tag('blueap_logo.png', style: "float:left; margin: 1%; width: 66%; max-width: 420px;"), "http://www.blueap.eu" %>
+    <%= link_to image_tag("life_logo.jpg"), "http://ec.europa.eu/environment/life/", class: "life_logo", style: "float:left; width:66%; max-width: 380px; margin:1%;" %>
+    <div style= "clear:both;"></div>
   </header>
 
   <% is_admin = ["refinery", "admin_badges", "moderate_actions", "devise", "admin"].include? controller_path.split('/').first %>
@@ -34,7 +36,11 @@
         
         <ul class="right">
           <li class="has-dropdown">
-            <a href="#">Menu</a>
+            
+            <% unless @pages.empty? %> 
+              <a href="#">Menu</a>
+            <% end %>
+
             <ul class="dropdown">
               <% for page in @pages %>
                 <li><%= link_to page.title, page.slug %></li>
@@ -45,12 +51,11 @@
 
         <!-- Left Nav Section -->
         <ul class="left">
-          <li class="sel-all active"><a href="#" data-target = ".badge">&#35;All</a></li>
+          <li class="sel-all active"><a href="#" data-target = ".badge">All</a></li>
           <% Action::CATEGORIES.each do |hashtag, name| %>
             <li class="sel-<%= hashtag %>" ><%= link_to "##{hashtag}", main_app.actions_path(anchor: hashtag), data: { target: ".#{hashtag}" } %></li>
           <% end %>
         </ul>
-
 
       </section>
     </nav>
@@ -90,6 +95,7 @@
 </footer>
 
 <%= javascript_tag do %>
+  $(document).foundation();
   <%= yield :javascript_footer %>
 <% end %>
 

@@ -3,14 +3,12 @@ class Action < ActiveRecord::Base
     :player_id, :screen_name, :link, :video_url, :photo_url
   belongs_to :player
 
-  CATEGORIES = {"agriculture" => "Agriculture and Forests", 
-    "health" => "Health", 
-    "city" => "City Planning and Buildings",
+  CATEGORIES = {"agricoltura" => "Agriculture and forests", 
+    "edifici" => "City planning and buildings",
     "resilienza" => "Resilience",
-    "biodiversity" => "Biodiversity and Nature",
-    "water" => "Water Management",
-    "disaster" => "Disaster Risk Reduction",
-    "blueapcall" => "BlueApCall" }
+    "verde" => "Green, biodiversity, and nature",
+    "acqua" => "Water management",
+    "mobilità" => "Transport and mobility" }
   
   def status_url
     "https://twitter.com/#{screen_name}/status/#{tweet_id}"
