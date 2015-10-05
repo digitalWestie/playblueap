@@ -1,6 +1,9 @@
 <%= render 'shared/admin_nav' %>
 
-<h3>Moderate Tweets</h3>
+<h3>Moderate New Tweets</h3>
 <%= link_to 'Check for tweets', admin_actions_path(:import_tweets=>true), class: "btn" %>
 
-<%= render 'accept_table' %>
+<%= form_tag moderate_actions_path, :class => "moderation", :method => :put do %>
+  <%= render 'accept_table' %>
+  <%= submit_tag 'Accept' %>
+<% end %>

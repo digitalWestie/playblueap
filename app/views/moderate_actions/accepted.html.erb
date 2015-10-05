@@ -1,8 +1,9 @@
 <%= render 'shared/admin_nav' %>
 
-<h3>Moderate Rejected Tweets</h3>
+<h3>Moderate Accepted Tweets</h3>
 
 <%= form_tag moderate_actions_path, :class => "moderation", :method => :put do %>
+  <%= f.hidden_field :reject_tweets, true %>
   <%= render 'accept_table' %>
   <%= submit_tag 'Accept' %>
 <% end %>
