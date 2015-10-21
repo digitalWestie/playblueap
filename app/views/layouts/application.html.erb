@@ -50,7 +50,8 @@
         <ul class="left">
           <li class = "active"><%= link_to "Home", root_path %></li>
           <li style="color:#AAA; font-size: 0.8125rem; line-height: 2.8125rem; padding: 0px 0.5rem; padding-top: 2px;">Classifiche: </li>
-          <li class="sel-all"><a href="#" data-target = ".badge">All</a></li>
+          <% href = controller.controller_name.eql?("actions") ? "#" : "/actions#" %>
+          <li class="sel-all"><a href="<%= href %>" data-target = ".badge">Azioni</a></li>
           <% Action::CATEGORIES.each do |hashtag, name| %>
             <li class="sel-<%= hashtag %>" ><%= link_to "##{hashtag}", main_app.actions_path(anchor: hashtag), data: { target: ".#{hashtag}" } %></li>
           <% end %>
